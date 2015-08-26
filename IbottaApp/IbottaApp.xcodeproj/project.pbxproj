@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4ED28B1B8E128C00593A96 /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2881B8E128C00593A96 /* Offers.json */; };
+		1F4ED28C1B8E128C00593A96 /* Retailers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2891B8E128C00593A96 /* Retailers.json */; };
+		1F4ED28D1B8E128C00593A96 /* Store Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED28A1B8E128C00593A96 /* Store Locations.json */; };
+		1F4ED2911B8E13EE00593A96 /* JADCheckSumHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2901B8E13EE00593A96 /* JADCheckSumHandler.m */; };
+		1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2961B8E14A100593A96 /* NSData+Addon.m */; };
+		1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED29A1B8E1AC300593A96 /* JSONParser.m */; };
 		1FD0A6621B8FCF76002473EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6611B8FCF76002473EA /* main.m */; };
 		1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6641B8FCF76002473EA /* AppDelegate.m */; };
 		1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */; };
@@ -28,6 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F4ED2881B8E128C00593A96 /* Offers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Offers.json; path = ../Offers.json; sourceTree = "<group>"; };
+		1F4ED2891B8E128C00593A96 /* Retailers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Retailers.json; path = ../Retailers.json; sourceTree = "<group>"; };
+		1F4ED28A1B8E128C00593A96 /* Store Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Store Locations.json"; path = "../Store Locations.json"; sourceTree = "<group>"; };
+		1F4ED28F1B8E13EE00593A96 /* JADCheckSumHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JADCheckSumHandler.h; sourceTree = "<group>"; };
+		1F4ED2901B8E13EE00593A96 /* JADCheckSumHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JADCheckSumHandler.m; sourceTree = "<group>"; };
+		1F4ED2951B8E14A100593A96 /* NSData+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Addon.h"; sourceTree = "<group>"; };
+		1F4ED2961B8E14A100593A96 /* NSData+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Addon.m"; sourceTree = "<group>"; };
+		1F4ED2991B8E1AC300593A96 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		1F4ED29A1B8E1AC300593A96 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		1FD0A65C1B8FCF76002473EA /* IbottaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD0A6601B8FCF76002473EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0A6611B8FCF76002473EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +77,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F4ED28E1B8E12F200593A96 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F4ED2881B8E128C00593A96 /* Offers.json */,
+				1F4ED2891B8E128C00593A96 /* Retailers.json */,
+				1F4ED28A1B8E128C00593A96 /* Store Locations.json */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		1F4ED2981B8E1A9700593A96 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1F4ED2951B8E14A100593A96 /* NSData+Addon.h */,
+				1F4ED2961B8E14A100593A96 /* NSData+Addon.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		1FD0A6531B8FCF76002473EA = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +122,7 @@
 				1FD0A68A1B8FCFCC002473EA /* View */,
 				1FD0A68B1B8FCFFD002473EA /* Common */,
 				1FD0A65F1B8FCF76002473EA /* Supporting Files */,
+				1F4ED28E1B8E12F200593A96 /* resources */,
 			);
 			path = IbottaApp;
 			sourceTree = "<group>";
@@ -146,10 +181,15 @@
 		1FD0A68B1B8FCFFD002473EA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1F4ED2981B8E1A9700593A96 /* Categories */,
 				1FD0A6631B8FCF76002473EA /* AppDelegate.h */,
 				1FD0A6641B8FCF76002473EA /* AppDelegate.m */,
 				1FD0A66F1B8FCF76002473EA /* Images.xcassets */,
 				1FD0A6711B8FCF76002473EA /* LaunchScreen.xib */,
+				1F4ED28F1B8E13EE00593A96 /* JADCheckSumHandler.h */,
+				1F4ED2901B8E13EE00593A96 /* JADCheckSumHandler.m */,
+				1F4ED2991B8E1AC300593A96 /* JSONParser.h */,
+				1F4ED29A1B8E1AC300593A96 /* JSONParser.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -234,6 +274,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4ED28B1B8E128C00593A96 /* Offers.json in Resources */,
+				1F4ED28C1B8E128C00593A96 /* Retailers.json in Resources */,
+				1F4ED28D1B8E128C00593A96 /* Store Locations.json in Resources */,
 				1FD0A66E1B8FCF76002473EA /* Main.storyboard in Resources */,
 				1FD0A6731B8FCF76002473EA /* LaunchScreen.xib in Resources */,
 				1FD0A6701B8FCF76002473EA /* Images.xcassets in Resources */,
@@ -254,10 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */,
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
 				1FD0A6621B8FCF76002473EA /* main.m in Sources */,
 				1FD0A66B1B8FCF76002473EA /* ViewController.m in Sources */,
+				1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */,
 				1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */,
+				1F4ED2911B8E13EE00593A96 /* JADCheckSumHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +494,7 @@
 				1FD0A6841B8FCF77002473EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FD0A6851B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +503,7 @@
 				1FD0A6871B8FCF77002473EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

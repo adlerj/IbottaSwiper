@@ -16,7 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Retailers" ofType:@"json"];
+    NSLog(@"%@", filePath);
+    
     return YES;
 }
 
