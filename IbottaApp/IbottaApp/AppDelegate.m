@@ -8,9 +8,11 @@
 
 #import "AppDelegate.h"
 #import "JSONParser.h"
+#import "JADLocationManager.h"
+
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) JADLocationManager *locationManager;
 @end
 
 @implementation AppDelegate
@@ -19,6 +21,7 @@
 {
     return (AppDelegate *)[UIApplication sharedApplication].delegate;
 }
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -29,6 +32,8 @@
     
     filePath = [[NSBundle mainBundle] pathForResource:@"Store Locations" ofType:@"json"];
     [JSONParser parseLocationsAtPathIfNew:filePath];
+    
+    self.locationManager = [[JADLocationManager alloc] init];
     
     return YES;
 }

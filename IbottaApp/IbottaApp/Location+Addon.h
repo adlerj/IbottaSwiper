@@ -14,8 +14,10 @@
                                 longitude:(NSNumber*)longitude;
 
 + (Location*)fetchLocationWithID:(NSString*)ID;
-
++ (NSArray*)fetchAllLocations;
 + (NSArray*)fetchAllLocationIDs;
+
++ (NSArray*)fetchClosestLocations:(int)numberOfLocations withinRange:(double)miles;
 
 + (void)deleteLocationsWithIDs:(NSArray*)IDs;
 

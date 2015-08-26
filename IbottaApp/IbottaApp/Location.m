@@ -12,9 +12,10 @@
 
 @implementation Location
 
-@dynamic locationID;
 @dynamic latitude;
+@dynamic locationID;
 @dynamic longitude;
+@dynamic distance;
 @dynamic retailer;
 
 @end

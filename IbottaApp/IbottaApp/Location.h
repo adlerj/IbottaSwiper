@@ -13,9 +13,10 @@
 
 @interface Location : NSManagedObject
 
-@property (nonatomic, retain) NSString * locationID;
 @property (nonatomic, retain) NSNumber * latitude;
+@property (nonatomic, retain) NSString * locationID;
 @property (nonatomic, retain) NSNumber * longitude;
+@property (nonatomic, retain) NSNumber * distance;
 @property (nonatomic, retain) Retailer *retailer;
 
 @end

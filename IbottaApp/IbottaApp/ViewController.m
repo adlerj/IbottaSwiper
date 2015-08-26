@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "JADLocationManager.h"
+#import "Location+Addon.h"
+#import "Retailer+Addon.h"
 
 @interface ViewController ()
 
@@ -16,12 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationsUpdated:) name:kDistancesUpdatedNotification object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)locationsUpdated:(NSNotification*)note
+{
+    NSArray *closestLocations = [Location fetchClosestLocations:50 withinRange:20];
+    
+    if (![closestLocations count]) {
+        NSLog(@"Sorry there are no location around you");
+    }
+    
+    for (Location *location in closestLocations) {
+        NSLog(@"%@ - Distance: %@ mile(s)", location.retailer.name, location.distance);
+    }
 }
 
 @end
