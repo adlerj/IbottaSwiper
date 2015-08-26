@@ -38,7 +38,7 @@
     NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
 
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Retailer"];
-    request.predicate = [NSPredicate predicateWithFormat:@"active == 1"];
+    request.predicate = [NSPredicate predicateWithFormat:@"retailerID == %@", ID];
     
     return [[context executeFetchRequest:request error:nil] firstObject];
 }

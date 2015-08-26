@@ -10,7 +10,7 @@
 		1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */; };
 		1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */; };
 		1F3A17D01B8E31250057707E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17CF1B8E31250057707E /* Location.m */; };
-		1F3A17D31B8E31260057707E /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17D21B8E31260057707E /* Retailer.m */; };
+		1F3A17DC1B8E38FD0057707E /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17DB1B8E38FD0057707E /* Retailer.m */; };
 		1F4ED28B1B8E128C00593A96 /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2881B8E128C00593A96 /* Offers.json */; };
 		1F4ED28C1B8E128C00593A96 /* Retailers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2891B8E128C00593A96 /* Retailers.json */; };
 		1F4ED28D1B8E128C00593A96 /* Store Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED28A1B8E128C00593A96 /* Store Locations.json */; };
@@ -46,8 +46,8 @@
 		1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+Addon.m"; sourceTree = "<group>"; };
 		1F3A17CE1B8E31250057707E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		1F3A17CF1B8E31250057707E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		1F3A17D11B8E31260057707E /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
-		1F3A17D21B8E31260057707E /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
+		1F3A17DA1B8E38FD0057707E /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
+		1F3A17DB1B8E38FD0057707E /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		1F4ED2881B8E128C00593A96 /* Offers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Offers.json; path = ../Offers.json; sourceTree = "<group>"; };
 		1F4ED2891B8E128C00593A96 /* Retailers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Retailers.json; path = ../Retailers.json; sourceTree = "<group>"; };
 		1F4ED28A1B8E128C00593A96 /* Store Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Store Locations.json"; path = "../Store Locations.json"; sourceTree = "<group>"; };
@@ -186,8 +186,8 @@
 			children = (
 				1F4ED2A51B8E1EEE00593A96 /* Categories */,
 				1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */,
-				1F3A17D11B8E31260057707E /* Retailer.h */,
-				1F3A17D21B8E31260057707E /* Retailer.m */,
+				1F3A17DA1B8E38FD0057707E /* Retailer.h */,
+				1F3A17DB1B8E38FD0057707E /* Retailer.m */,
 				1F3A17CE1B8E31250057707E /* Location.h */,
 				1F3A17CF1B8E31250057707E /* Location.m */,
 				1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */,
@@ -337,7 +337,7 @@
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
 				1FD0A6621B8FCF76002473EA /* main.m in Sources */,
 				1F3A17D01B8E31250057707E /* Location.m in Sources */,
-				1F3A17D31B8E31260057707E /* Retailer.m in Sources */,
+				1F3A17DC1B8E38FD0057707E /* Retailer.m in Sources */,
 				1FD0A66B1B8FCF76002473EA /* ViewController.m in Sources */,
 				1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */,
 				1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */,

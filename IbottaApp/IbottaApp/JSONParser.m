@@ -16,19 +16,21 @@
 
 + (BOOL)parseRetailersAtPathIfNew:(NSString*)path
 {
-    return [self parseRetailersAtPath:path];
-}
-
-+ (BOOL)parseRetailersAtPath:(NSString*)path
-{
-    NSError *error;
+    NSError *error = nil;
     
     NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+    NSData *fileData = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
+    
+    if ([JADCheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Retailers]) {
+        return YES;
+    }
     
     if(error) {
         NSLog(@"Error reading file: %@", error.localizedDescription);
         return NO;
     }
+    
+    
     
     // Get JSON objects into initial array
     NSArray *rawRetailers = [[NSJSONSerialization JSONObjectWithData:[fileContents dataUsingEncoding:NSUTF8StringEncoding] options:0 error:NULL] valueForKey:@"retailers"];
@@ -37,7 +39,7 @@
     [context performBlockAndWait:^{
         for (NSDictionary *retailer in rawRetailers) {
             
-            [Retailer createOrUpdateRetailerWithID:retailer[@"id"]
+            [Retailer createOrUpdateRetailerWithID:[NSString stringWithFormat:@"%d",(int)retailer[@"id"]]
                                             active:retailer[@"active"]
                                               name:retailer[@"name"]
                                            iconURL:retailer[@"icon_url"]
@@ -47,8 +49,11 @@
         [context save:nil];
     }];
     
+    [JADCheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Retailers];
     return YES;
 }
+
+
 
 
 

@@ -22,8 +22,8 @@
 @dynamic exclusiveImageURL;
 @dynamic featured;
 @dynamic iconURL;
+@dynamic rID;
 @dynamic name;
-@dynamic retailerID;
 @dynamic sortOrder;
 @dynamic verificationType;
 @dynamic locations;

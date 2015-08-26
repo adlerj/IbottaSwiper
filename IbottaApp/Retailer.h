@@ -22,8 +22,8 @@
 @property (nonatomic, retain) NSString * exclusiveImageURL;
 @property (nonatomic, retain) NSNumber * featured;
 @property (nonatomic, retain) NSString * iconURL;
+@property (nonatomic, retain) NSString * rID;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * retailerID;
 @property (nonatomic, retain) NSNumber * sortOrder;
 @property (nonatomic, retain) NSNumber * verificationType;
 @property (nonatomic, retain) NSSet *locations;
