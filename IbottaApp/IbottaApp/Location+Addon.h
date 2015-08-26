@@ -15,4 +15,8 @@
 
 + (Location*)fetchLocationWithID:(NSString*)ID;
 
++ (NSArray*)fetchAllLocationIDs;
+
++ (void)deleteLocationsWithIDs:(NSArray*)IDs;
+
 @end

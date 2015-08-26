@@ -27,6 +27,9 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Retailers" ofType:@"json"];
     [JSONParser parseRetailersAtPathIfNew:filePath];
     
+    filePath = [[NSBundle mainBundle] pathForResource:@"Store Locations" ofType:@"json"];
+    [JSONParser parseLocationsAtPathIfNew:filePath];
+    
     return YES;
 }
 

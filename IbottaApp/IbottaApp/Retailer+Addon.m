@@ -43,5 +43,31 @@
     return [[context executeFetchRequest:request error:nil] firstObject];
 }
 
++ (NSArray*)fetchAllRetailerIDs
+{
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Retailer"];
+    request.resultType = NSDictionaryResultType;
+    request.returnsDistinctResults = YES;
+    
+    [request setPropertiesToFetch:[NSArray arrayWithObject:@"retailerID"]];
+    
+    NSArray *objects = [context executeFetchRequest:request error:nil];
+    return [objects valueForKey:@"retailerID"];
+}
+
++ (void)deleteRetailersWithIDs:(NSArray*)IDs
+{
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+
+    for (NSString *ID in IDs) {
+        Retailer *retailer = [Retailer fetchRetailerForID:ID];
+        if (retailer) {
+            [retailer removeLocations:retailer.locations];
+            [context deleteObject:retailer];
+        }
+    }
+}
+
 
 @end

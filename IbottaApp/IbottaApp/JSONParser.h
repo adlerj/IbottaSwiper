@@ -10,4 +10,5 @@
 
 @interface JSONParser : NSObject
 + (BOOL)parseRetailersAtPathIfNew:(NSString*)path;
++ (BOOL)parseLocationsAtPathIfNew:(NSString*)path;
 @end

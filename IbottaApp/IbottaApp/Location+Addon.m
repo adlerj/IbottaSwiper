@@ -31,8 +31,34 @@
     NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
     
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
-    request.predicate = [NSPredicate predicateWithFormat:@"locationID = %%@", ID];
+    request.predicate = [NSPredicate predicateWithFormat:@"locationID = %@", ID];
     
     return [[context executeFetchRequest:request error:nil] firstObject];
+}
+
++ (NSArray*)fetchAllLocationIDs
+{
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Location"];
+    request.resultType = NSDictionaryResultType;
+    request.returnsDistinctResults = YES;
+    
+    [request setPropertiesToFetch:[NSArray arrayWithObject:@"locationID"]];
+    
+    NSArray *objects = [context executeFetchRequest:request error:nil];
+    return [objects valueForKey:@"locationID"];
+}
+
++ (void)deleteLocationsWithIDs:(NSArray*)IDs
+{
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    
+    for (NSString *ID in IDs) {
+        Location *location = [Location fetchLocationWithID:ID];
+        if (location) {
+            location.retailer = nil;
+            [context deleteObject:location];
+        }
+    }
 }
 @end

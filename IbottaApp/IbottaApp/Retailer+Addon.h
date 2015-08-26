@@ -16,4 +16,8 @@
                                  imageURL:(NSString*)imageURL;
 
 + (Retailer*)fetchRetailerForID:(NSString*)ID;
+
++ (NSArray*)fetchAllRetailerIDs;
+
++ (void)deleteRetailersWithIDs:(NSArray*)IDs;
 @end
