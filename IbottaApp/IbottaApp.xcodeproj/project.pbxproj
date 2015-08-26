@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */; };
+		1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */; };
+		1F3A17D01B8E31250057707E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17CF1B8E31250057707E /* Location.m */; };
+		1F3A17D31B8E31260057707E /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17D21B8E31260057707E /* Retailer.m */; };
 		1F4ED28B1B8E128C00593A96 /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2881B8E128C00593A96 /* Offers.json */; };
 		1F4ED28C1B8E128C00593A96 /* Retailers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2891B8E128C00593A96 /* Retailers.json */; };
 		1F4ED28D1B8E128C00593A96 /* Store Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED28A1B8E128C00593A96 /* Store Locations.json */; };
 		1F4ED2911B8E13EE00593A96 /* JADCheckSumHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2901B8E13EE00593A96 /* JADCheckSumHandler.m */; };
 		1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2961B8E14A100593A96 /* NSData+Addon.m */; };
 		1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED29A1B8E1AC300593A96 /* JSONParser.m */; };
+		1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */; };
 		1FD0A6621B8FCF76002473EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6611B8FCF76002473EA /* main.m */; };
 		1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6641B8FCF76002473EA /* AppDelegate.m */; };
 		1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */; };
@@ -34,6 +39,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F3A17BB1B8E240A0057707E /* Retailer+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Retailer+Addon.h"; sourceTree = "<group>"; };
+		1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Retailer+Addon.m"; sourceTree = "<group>"; };
+		1F3A17C41B8E25120057707E /* IbottaAppHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IbottaAppHeader.pch; sourceTree = SOURCE_ROOT; };
+		1F3A17CB1B8E2B3D0057707E /* Location+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+Addon.h"; sourceTree = "<group>"; };
+		1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+Addon.m"; sourceTree = "<group>"; };
+		1F3A17CE1B8E31250057707E /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		1F3A17CF1B8E31250057707E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		1F3A17D11B8E31260057707E /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
+		1F3A17D21B8E31260057707E /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		1F4ED2881B8E128C00593A96 /* Offers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Offers.json; path = ../Offers.json; sourceTree = "<group>"; };
 		1F4ED2891B8E128C00593A96 /* Retailers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Retailers.json; path = ../Retailers.json; sourceTree = "<group>"; };
 		1F4ED28A1B8E128C00593A96 /* Store Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Store Locations.json"; path = "../Store Locations.json"; sourceTree = "<group>"; };
@@ -43,6 +57,8 @@
 		1F4ED2961B8E14A100593A96 /* NSData+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Addon.m"; sourceTree = "<group>"; };
 		1F4ED2991B8E1AC300593A96 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		1F4ED29A1B8E1AC300593A96 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
+		1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedemptionData.h; sourceTree = "<group>"; };
+		1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedemptionData.m; sourceTree = "<group>"; };
 		1FD0A65C1B8FCF76002473EA /* IbottaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD0A6601B8FCF76002473EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0A6611B8FCF76002473EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +112,17 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		1F4ED2A51B8E1EEE00593A96 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1F3A17BB1B8E240A0057707E /* Retailer+Addon.h */,
+				1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */,
+				1F3A17CB1B8E2B3D0057707E /* Location+Addon.h */,
+				1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		1FD0A6531B8FCF76002473EA = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +157,7 @@
 		1FD0A65F1B8FCF76002473EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F3A17C41B8E25120057707E /* IbottaAppHeader.pch */,
 				1FD0A6601B8FCF76002473EA /* Info.plist */,
 				1FD0A6611B8FCF76002473EA /* main.m */,
 			);
@@ -156,7 +184,14 @@
 		1FD0A6881B8FCF9A002473EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F4ED2A51B8E1EEE00593A96 /* Categories */,
 				1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */,
+				1F3A17D11B8E31260057707E /* Retailer.h */,
+				1F3A17D21B8E31260057707E /* Retailer.m */,
+				1F3A17CE1B8E31250057707E /* Location.h */,
+				1F3A17CF1B8E31250057707E /* Location.m */,
+				1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */,
+				1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,11 +333,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */,
+				1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */,
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
 				1FD0A6621B8FCF76002473EA /* main.m in Sources */,
+				1F3A17D01B8E31250057707E /* Location.m in Sources */,
+				1F3A17D31B8E31260057707E /* Retailer.m in Sources */,
 				1FD0A66B1B8FCF76002473EA /* ViewController.m in Sources */,
+				1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */,
 				1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */,
 				1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */,
+				1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */,
 				1F4ED2911B8E13EE00593A96 /* JADCheckSumHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +408,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = IbottaAppHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -408,6 +450,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = IbottaAppHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

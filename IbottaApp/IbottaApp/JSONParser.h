@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface JSONParser : NSObject
-
++ (BOOL)parseRetailersAtPathIfNew:(NSString*)path;
 @end

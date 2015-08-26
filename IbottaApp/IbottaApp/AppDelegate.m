@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JSONParser.h"
 
 @interface AppDelegate ()
 
@@ -14,11 +15,17 @@
 
 @implementation AppDelegate
 
++ (instancetype)sharedDelegate
+{
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    NSLog(@"Documents Directory %@", [self applicationDocumentsDirectory]);
+    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Retailers" ofType:@"json"];
-    NSLog(@"%@", filePath);
+    [JSONParser parseRetailersAtPathIfNew:filePath];
     
     return YES;
 }
@@ -47,16 +54,17 @@
     [self saveContext];
 }
 
+// Returns the URL to the application's Documents directory.
+- (NSURL *)applicationDocumentsDirectory
+{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
-- (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "jeff.IbottaApp" in the application's documents directory.
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
 
 - (NSManagedObjectModel *)managedObjectModel {
     // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
@@ -107,7 +115,7 @@
     if (!coordinator) {
         return nil;
     }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
+    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
 }

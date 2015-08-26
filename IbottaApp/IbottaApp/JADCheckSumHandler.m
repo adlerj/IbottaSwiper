@@ -17,7 +17,7 @@ NSString * const kStoreLocation = @"kStoreLocation";
 
 @implementation JADCheckSumHandler
 
-- (void)saveChecksumForData:(NSData*)data ofType:(JSONFile)fileType
++ (void)saveChecksumForData:(NSData*)data ofType:(JSONFile)fileType
 {
     NSString *MD5 = [data md5String];
     
@@ -35,7 +35,7 @@ NSString * const kStoreLocation = @"kStoreLocation";
     [ud synchronize];
 }
 
-- (BOOL)checkChecksumForData:(NSData*)data ofType:(JSONFile)fileType
++ (BOOL)checkChecksumForData:(NSData*)data ofType:(JSONFile)fileType
 {
     NSString *MD5 = [data md5String];
     
@@ -51,7 +51,7 @@ NSString * const kStoreLocation = @"kStoreLocation";
 
 }
 
-- (NSString*)keyForFileType:(JSONFile)fileType
++ (NSString*)keyForFileType:(JSONFile)fileType
 {
     NSString* out = @"";
     

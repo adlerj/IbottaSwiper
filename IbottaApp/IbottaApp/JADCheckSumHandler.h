@@ -15,6 +15,6 @@ typedef NS_ENUM(NSUInteger, JSONFile) {
 };
 
 @interface JADCheckSumHandler : NSObject
-- (BOOL)checkChecksumForData:(NSData*)data ofType:(JSONFile)fileType;
-- (void)saveChecksumForData:(NSData*)data ofType:(JSONFile)fileType;
++ (BOOL)checkChecksumForData:(NSData*)data ofType:(JSONFile)fileType;
++ (void)saveChecksumForData:(NSData*)data ofType:(JSONFile)fileType;
 @end
