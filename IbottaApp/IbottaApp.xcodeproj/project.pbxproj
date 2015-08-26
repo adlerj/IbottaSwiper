@@ -20,6 +20,10 @@
 		1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2961B8E14A100593A96 /* NSData+Addon.m */; };
 		1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED29A1B8E1AC300593A96 /* JSONParser.m */; };
 		1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */; };
+		1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E61B8E663100D4F27D /* ImageLabelView.m */; settings = {ASSET_TAGS = (); }; };
+		1FA021EA1B8E668A00D4F27D /* ChooseOfferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */; settings = {ASSET_TAGS = (); }; };
+		1FA021ED1B8E691000D4F27D /* OfferItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EC1B8E691000D4F27D /* OfferItem.m */; settings = {ASSET_TAGS = (); }; };
+		1FA021F01B8E6BF700D4F27D /* ChooseOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1FD0A6621B8FCF76002473EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6611B8FCF76002473EA /* main.m */; };
 		1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6641B8FCF76002473EA /* AppDelegate.m */; };
 		1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */; };
@@ -66,6 +70,14 @@
 		1F4ED29A1B8E1AC300593A96 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedemptionData.h; sourceTree = "<group>"; };
 		1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedemptionData.m; sourceTree = "<group>"; };
+		1FA021E51B8E663100D4F27D /* ImageLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelView.h; sourceTree = "<group>"; };
+		1FA021E61B8E663100D4F27D /* ImageLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelView.m; sourceTree = "<group>"; };
+		1FA021E81B8E668A00D4F27D /* ChooseOfferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOfferView.h; sourceTree = "<group>"; };
+		1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOfferView.m; sourceTree = "<group>"; };
+		1FA021EB1B8E691000D4F27D /* OfferItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferItem.h; sourceTree = "<group>"; };
+		1FA021EC1B8E691000D4F27D /* OfferItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferItem.m; sourceTree = "<group>"; };
+		1FA021EE1B8E6BF700D4F27D /* ChooseOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOfferViewController.h; sourceTree = "<group>"; };
+		1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOfferViewController.m; sourceTree = "<group>"; };
 		1FD0A65C1B8FCF76002473EA /* IbottaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD0A6601B8FCF76002473EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0A6611B8FCF76002473EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -206,6 +218,8 @@
 				1F3A17E61B8E566F0057707E /* Location.m */,
 				1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */,
 				1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */,
+				1FA021EB1B8E691000D4F27D /* OfferItem.h */,
+				1FA021EC1B8E691000D4F27D /* OfferItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -215,6 +229,8 @@
 			children = (
 				1FD0A6691B8FCF76002473EA /* ViewController.h */,
 				1FD0A66A1B8FCF76002473EA /* ViewController.m */,
+				1FA021EE1B8E6BF700D4F27D /* ChooseOfferViewController.h */,
+				1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -223,6 +239,10 @@
 			isa = PBXGroup;
 			children = (
 				1FD0A66C1B8FCF76002473EA /* Main.storyboard */,
+				1FA021E51B8E663100D4F27D /* ImageLabelView.h */,
+				1FA021E61B8E663100D4F27D /* ImageLabelView.m */,
+				1FA021E81B8E668A00D4F27D /* ChooseOfferView.h */,
+				1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -402,9 +422,12 @@
 			files = (
 				1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */,
 				1F3A17E71B8E566F0057707E /* Location.m in Sources */,
+				1FA021EA1B8E668A00D4F27D /* ChooseOfferView.m in Sources */,
 				1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */,
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
 				1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */,
+				1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */,
+				1FA021ED1B8E691000D4F27D /* OfferItem.m in Sources */,
 				1FD0A6621B8FCF76002473EA /* main.m in Sources */,
 				1F3A17DC1B8E38FD0057707E /* Retailer.m in Sources */,
 				1FD0A66B1B8FCF76002473EA /* ViewController.m in Sources */,
@@ -413,6 +436,7 @@
 				1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */,
 				1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */,
 				1F4ED2911B8E13EE00593A96 /* JADCheckSumHandler.m in Sources */,
+				1FA021F01B8E6BF700D4F27D /* ChooseOfferViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

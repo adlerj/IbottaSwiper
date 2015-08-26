@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "JSONParser.h"
 #import "JADLocationManager.h"
+#import "ChooseOfferViewController.h"
 
 
 @interface AppDelegate ()
@@ -35,6 +36,12 @@
     
     self.locationManager = [[JADLocationManager alloc] init];
     
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    self.window.rootViewController = [ChooseOfferViewController new];
+
     return YES;
 }
 
