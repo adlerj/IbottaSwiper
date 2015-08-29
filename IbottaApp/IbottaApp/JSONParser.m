@@ -10,6 +10,7 @@
 #import "JADCheckSumHandler.h"
 #import "Retailer+Addon.h"
 #import "Location+Addon.h"
+#import "Offer+Addon.h"
 
 @implementation JSONParser
 
@@ -112,9 +113,63 @@
     return YES;
 }
 
-
-
-
-
++ (BOOL)parseOffersAtPathIfNew:(NSString*)path
+{
+    NSError *error = nil;
+    
+    NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+    
+    if(error) {
+        NSLog(@"Error reading file: %@", error.localizedDescription);
+        return NO;
+    }
+    
+    NSData *fileData = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
+    
+    if ([JADCheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Offers]) {
+        return YES;
+    }
+    
+    // Get JSON objects into initial array
+    NSArray *rawOffers = [[NSJSONSerialization JSONObjectWithData:[fileContents dataUsingEncoding:NSUTF8StringEncoding] options:0 error:NULL] valueForKey:@"offers"];
+    
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    [context performBlockAndWait:^{
+        
+        NSMutableArray *offerIDs = [[Offer fetchAllOfferIDs] mutableCopy];
+        
+        for (NSDictionary *offerDict in rawOffers) {
+            
+            NSString *offerID = [NSString stringWithFormat:@"%d",(int)offerDict[@"id"]];
+            NSSet *retailerIDs = offerDict[@"retailers"];
+            
+            Offer *offer = [Offer createOrUpdateOfferWithID:offerID
+                                                       name:offerDict[@"name"]
+                                                   imageURL:offerDict[@"url"]
+                                          earningsPotential:offerDict[@"earnings_potential"]];
+            
+            [offerIDs removeObject:offerID];
+            
+            for (NSNumber *retailerID in retailerIDs) {
+                Retailer *retailer = [Retailer fetchRetailerForID:[retailerID stringValue]];
+                if (retailer) {
+                    [offer addRetailersObject:retailer];
+                }
+            }
+            
+            if (![offer.retailers count]) {
+                [context deleteObject:offer];
+            }
+        }
+        
+        //Delete all old locations from CoreData
+        [Location deleteLocationsWithIDs:offerIDs];
+        
+        [context save:nil];
+    }];
+    
+    [JADCheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Offers];
+    return YES;
+}
 
 @end

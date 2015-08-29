@@ -2,12 +2,13 @@
 //  Retailer.m
 //  IbottaApp
 //
-//  Created by Jeffrey Adler on 8/26/15.
+//  Created by Jeffrey Adler on 8/29/15.
 //  Copyright (c) 2015 Jeff. All rights reserved.
 //
 
 #import "Retailer.h"
 #import "Location.h"
+#import "Offer.h"
 #import "RedemptionData.h"
 
 
@@ -28,5 +29,6 @@
 @dynamic verificationType;
 @dynamic locations;
 @dynamic redemptionData;
+@dynamic offers;
 
 @end

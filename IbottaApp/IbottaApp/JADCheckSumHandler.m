@@ -63,7 +63,7 @@ NSString * const kStoreLocation = @"kStoreLocation";
             out = kRetailers;
             break;
         case JSONFile_Offers:
-            out = kRetailers;
+            out = kOffers;
             break;
             
         default:

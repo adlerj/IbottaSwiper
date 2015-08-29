@@ -64,6 +64,7 @@
         Retailer *retailer = [Retailer fetchRetailerForID:ID];
         if (retailer) {
             [retailer removeLocations:retailer.locations];
+            [retailer removeOffers:retailer.offers];
             [context deleteObject:retailer];
         }
     }

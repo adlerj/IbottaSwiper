@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */; };
 		1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */; };
-		1F3A17DC1B8E38FD0057707E /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17DB1B8E38FD0057707E /* Retailer.m */; };
 		1F3A17DE1B8E47D90057707E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A17DD1B8E47D90057707E /* CoreLocation.framework */; };
 		1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E31B8E4E1F0057707E /* JADLocationManager.m */; };
 		1F3A17E71B8E566F0057707E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E61B8E566F0057707E /* Location.m */; };
@@ -20,10 +19,13 @@
 		1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2961B8E14A100593A96 /* NSData+Addon.m */; };
 		1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED29A1B8E1AC300593A96 /* JSONParser.m */; };
 		1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */; };
-		1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E61B8E663100D4F27D /* ImageLabelView.m */; settings = {ASSET_TAGS = (); }; };
-		1FA021EA1B8E668A00D4F27D /* ChooseOfferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */; settings = {ASSET_TAGS = (); }; };
-		1FA021ED1B8E691000D4F27D /* OfferItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EC1B8E691000D4F27D /* OfferItem.m */; settings = {ASSET_TAGS = (); }; };
-		1FA021F01B8E6BF700D4F27D /* ChooseOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1F60754F1B92693A00D78653 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F60754E1B92693A00D78653 /* Offer.m */; };
+		1F6075521B92697300D78653 /* Offer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6075511B92697300D78653 /* Offer+Addon.m */; };
+		1F6075551B926B3400D78653 /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6075541B926B3400D78653 /* Retailer.m */; };
+		1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E61B8E663100D4F27D /* ImageLabelView.m */; };
+		1FA021EA1B8E668A00D4F27D /* ChooseOfferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */; };
+		1FA021ED1B8E691000D4F27D /* OfferItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EC1B8E691000D4F27D /* OfferItem.m */; };
+		1FA021F01B8E6BF700D4F27D /* ChooseOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */; };
 		1FD0A6621B8FCF76002473EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6611B8FCF76002473EA /* main.m */; };
 		1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6641B8FCF76002473EA /* AppDelegate.m */; };
 		1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */; };
@@ -52,8 +54,6 @@
 		1F3A17C41B8E25120057707E /* IbottaAppHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IbottaAppHeader.pch; sourceTree = SOURCE_ROOT; };
 		1F3A17CB1B8E2B3D0057707E /* Location+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Location+Addon.h"; sourceTree = "<group>"; };
 		1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Location+Addon.m"; sourceTree = "<group>"; };
-		1F3A17DA1B8E38FD0057707E /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
-		1F3A17DB1B8E38FD0057707E /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		1F3A17DD1B8E47D90057707E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1F3A17E21B8E4E1F0057707E /* JADLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JADLocationManager.h; sourceTree = "<group>"; };
 		1F3A17E31B8E4E1F0057707E /* JADLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JADLocationManager.m; sourceTree = "<group>"; };
@@ -70,6 +70,12 @@
 		1F4ED29A1B8E1AC300593A96 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedemptionData.h; sourceTree = "<group>"; };
 		1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedemptionData.m; sourceTree = "<group>"; };
+		1F60754D1B92693A00D78653 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		1F60754E1B92693A00D78653 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		1F6075501B92697300D78653 /* Offer+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Offer+Addon.h"; sourceTree = "<group>"; };
+		1F6075511B92697300D78653 /* Offer+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Offer+Addon.m"; sourceTree = "<group>"; };
+		1F6075531B926B3400D78653 /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
+		1F6075541B926B3400D78653 /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		1FA021E51B8E663100D4F27D /* ImageLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelView.h; sourceTree = "<group>"; };
 		1FA021E61B8E663100D4F27D /* ImageLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelView.m; sourceTree = "<group>"; };
 		1FA021E81B8E668A00D4F27D /* ChooseOfferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOfferView.h; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 				1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */,
 				1F3A17CB1B8E2B3D0057707E /* Location+Addon.h */,
 				1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */,
+				1F6075501B92697300D78653 /* Offer+Addon.h */,
+				1F6075511B92697300D78653 /* Offer+Addon.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -212,8 +220,10 @@
 			children = (
 				1F4ED2A51B8E1EEE00593A96 /* Categories */,
 				1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */,
-				1F3A17DA1B8E38FD0057707E /* Retailer.h */,
-				1F3A17DB1B8E38FD0057707E /* Retailer.m */,
+				1F6075531B926B3400D78653 /* Retailer.h */,
+				1F6075541B926B3400D78653 /* Retailer.m */,
+				1F60754D1B92693A00D78653 /* Offer.h */,
+				1F60754E1B92693A00D78653 /* Offer.m */,
 				1F3A17E51B8E566F0057707E /* Location.h */,
 				1F3A17E61B8E566F0057707E /* Location.m */,
 				1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */,
@@ -426,12 +436,14 @@
 				1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */,
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
 				1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */,
+				1F60754F1B92693A00D78653 /* Offer.m in Sources */,
+				1F6075521B92697300D78653 /* Offer+Addon.m in Sources */,
 				1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */,
 				1FA021ED1B8E691000D4F27D /* OfferItem.m in Sources */,
 				1FD0A6621B8FCF76002473EA /* main.m in Sources */,
-				1F3A17DC1B8E38FD0057707E /* Retailer.m in Sources */,
 				1FD0A66B1B8FCF76002473EA /* ViewController.m in Sources */,
 				1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */,
+				1F6075551B926B3400D78653 /* Retailer.m in Sources */,
 				1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */,
 				1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */,
 				1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */,

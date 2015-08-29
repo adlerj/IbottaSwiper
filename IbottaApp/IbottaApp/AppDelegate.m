@@ -34,6 +34,9 @@
     filePath = [[NSBundle mainBundle] pathForResource:@"Store Locations" ofType:@"json"];
     [JSONParser parseLocationsAtPathIfNew:filePath];
     
+    filePath = [[NSBundle mainBundle] pathForResource:@"Offers" ofType:@"json"];
+    [JSONParser parseOffersAtPathIfNew:filePath];
+    
     self.locationManager = [[JADLocationManager alloc] init];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

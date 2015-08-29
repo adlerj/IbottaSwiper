@@ -9,6 +9,10 @@
 #import "ChooseOfferViewController.h"
 #import "OfferItem.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
+#import "Location+Addon.h"
+#import "Retailer+Addon.h"
+#import "Offer+Addon.h"
+#import "JADLocationManager.h"
 
 static const CGFloat ChooseOfferButtonHorizontalPadding = 80.f;
 static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
@@ -26,7 +30,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     if (self) {
         // This view controller maintains a list of ChoosePersonView
         // instances to display.
-        _offerItems = [[self defaultOffers] mutableCopy];
+        _offerItems = [NSMutableArray array];
     }
     return self;
 }
@@ -35,6 +39,8 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self locationsUpdated:nil];
     
     // Display the first ChoosePersonView in front. Users can swipe to indicate
     // whether they like or dislike the person displayed.
@@ -51,6 +57,27 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     // See the `nopeFrontCardView` and `likeFrontCardView` methods.
     [self constructNopeButton];
     [self constructLikedButton];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationsUpdated:) name:kDistancesUpdatedNotification object:nil];
+}
+
+- (void)locationsUpdated:(NSNotification*)note
+{
+    NSArray *closestLocations = [Location fetchClosestLocations:50 withinRange:20];
+    
+    for (Location *location in closestLocations) {
+        Retailer *retailer = location.retailer;
+        NSSet *offers = retailer.offers;
+        for (Offer *offer in offers) {
+            [self.offerItems addObject:[offer toOfferItem]];
+        }
+    }
+    
+    if (![closestLocations count]) {
+        NSLog(@"Sorry there are no location around you");
+    } else {
+        [self.view setNeedsDisplay];
+    }
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
