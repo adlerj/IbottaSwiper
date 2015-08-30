@@ -14,9 +14,8 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 @interface ChooseOfferView ()
 @property (nonatomic, strong) UIView *informationView;
 @property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) ImageLabelView *cameraImageLabelView;
-@property (nonatomic, strong) ImageLabelView *interestsImageLabelView;
-@property (nonatomic, strong) ImageLabelView *friendsImageLabelView;
+@property (nonatomic, strong) ImageLabelView *savingsImageLabelView;
+@property (nonatomic, strong) ImageLabelView *distanceImageLabelView;
 @end
 
 @implementation ChooseOfferView
@@ -57,9 +56,8 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     [self addSubview:_informationView];
     
     [self constructNameLabel];
-    [self constructCameraImageLabelView];
-    [self constructInterestsImageLabelView];
-    [self constructFriendsImageLabelView];
+    [self constructSavingsImageLabelView];
+    [self constructDistanceImageLabelView];
 }
 
 - (void)constructNameLabel {
@@ -70,33 +68,44 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
                               floorf(CGRectGetWidth(_informationView.frame)/2),
                               CGRectGetHeight(_informationView.frame) - topPadding);
     _nameLabel = [[UILabel alloc] initWithFrame:frame];
-    _nameLabel.text = [NSString stringWithFormat:@"%@, %f Miles Away", _offerItem.name, _offerItem.distance];
+    _nameLabel.text = [NSString stringWithFormat:@"%@", _offerItem.name];
+    _nameLabel.font = [UIFont systemFontOfSize:12.0];
     [_informationView addSubview:_nameLabel];
 }
 
-- (void)constructCameraImageLabelView {
-    CGFloat rightPadding = 10.f;
-    UIImage *image = [UIImage imageNamed:@"camera"];
-    _cameraImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetWidth(_informationView.bounds) - rightPadding
+- (void)constructSavingsImageLabelView {
+    CGFloat rightPadding = 30.f;
+    UIImage *image = [UIImage imageNamed:@"savings"];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSString *price = [formatter stringFromNumber:[NSNumber numberWithDouble:self.offerItem.price ]];
+    
+    
+    NSString *text = [NSString stringWithFormat:@"%@", price];
+    
+    _savingsImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetWidth(_informationView.bounds) - rightPadding
                                                       image:image
-                                                       text:@"5"];
-    [_informationView addSubview:_cameraImageLabelView];
+                                                       text:text];
+    [_informationView addSubview:_savingsImageLabelView];
 }
 
-- (void)constructInterestsImageLabelView {
-    UIImage *image = [UIImage imageNamed:@"book"];
-    _interestsImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetMinX(_cameraImageLabelView.frame)
-                                                         image:image
-                                                          text:@"5"];
-    [_informationView addSubview:_interestsImageLabelView];
-}
-
-- (void)constructFriendsImageLabelView {
-    UIImage *image = [UIImage imageNamed:@"group"];
-    _friendsImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetMinX(_interestsImageLabelView.frame)
+- (void)constructDistanceImageLabelView {
+    CGFloat rightPadding = 30.f;
+    UIImage *image = [UIImage imageNamed:@"distance"];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    formatter.maximumFractionDigits = 2;
+    
+    NSString *distance = [formatter stringFromNumber:[NSNumber numberWithDouble:self.offerItem.distance ]];
+    
+    NSString *text = [NSString stringWithFormat:@"%@ Mi.", distance];
+    
+    _distanceImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetMinX(_savingsImageLabelView.frame) - rightPadding
                                                        image:image
-                                                        text:@"5"];
-    [_informationView addSubview:_friendsImageLabelView];
+                                                        text:text];
+    [_informationView addSubview:_distanceImageLabelView];
 }
 
 - (ImageLabelView *)buildImageLabelViewLeftOf:(CGFloat)x image:(UIImage *)image text:(NSString *)text {

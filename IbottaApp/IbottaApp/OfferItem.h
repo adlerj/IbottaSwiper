@@ -17,7 +17,6 @@
 
 - (instancetype)initWithName:(NSString*)name
                        image:(UIImage*)image
-                       price:(double)price
-                    distance:(double)distance;
+                       price:(double)price;
 
 @end

@@ -73,9 +73,8 @@
     UIImage *image = [UIImage imageWithData:imageData];
     
     return [[OfferItem alloc] initWithName:self.name
-                              image:image
-                              price:[self.earningsPotential doubleValue]
-                           distance:0];
+                                     image:image
+                                     price:[self.earningsPotential doubleValue]];
 }
 
 

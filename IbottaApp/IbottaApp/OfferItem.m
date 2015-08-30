@@ -13,7 +13,6 @@
 - (instancetype)initWithName:(NSString*)name
                        image:(UIImage*)image
                        price:(double)price
-                    distance:(double)distance
 {
     self = [super init];
     
@@ -21,7 +20,6 @@
         _name = name;
         _image = image;
         _price = price;
-        _distance = distance;
     }
 
     return self;

@@ -44,13 +44,13 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     
     // Display the first ChoosePersonView in front. Users can swipe to indicate
     // whether they like or dislike the person displayed.
-    self.frontCardView = [self popPersonViewWithFrame:[self frontCardViewFrame]];
+    self.frontCardView = [self popOfferViewWithFrame:[self frontCardViewFrame]];
     [self.view addSubview:self.frontCardView];
     
     // Display the second ChoosePersonView in back. This view controller uses
     // the MDCSwipeToChooseDelegate protocol methods to update the front and
     // back views after each user swipe.
-    self.backCardView = [self popPersonViewWithFrame:[self backCardViewFrame]];
+    self.backCardView = [self popOfferViewWithFrame:[self backCardViewFrame]];
     [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
     
     // Add buttons to programmatically swipe the view left or right.
@@ -69,7 +69,9 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
         Retailer *retailer = location.retailer;
         NSSet *offers = retailer.offers;
         for (Offer *offer in offers) {
-            [self.offerItems addObject:[offer toOfferItem]];
+            OfferItem *offerItem = [offer toOfferItem];
+            offerItem.distance = [location.distance doubleValue];
+            [self.offerItems addObject:offerItem];
         }
     }
     
@@ -106,7 +108,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     // MDCSwipeOptions class). Since the front card view is gone, we
     // move the back card to the front, and create a new back card.
     self.frontCardView = self.backCardView;
-    if ((self.backCardView = [self popPersonViewWithFrame:[self backCardViewFrame]])) {
+    if ((self.backCardView = [self popOfferViewWithFrame:[self backCardViewFrame]])) {
         // Fade the back card into view.
         self.backCardView.alpha = 0.f;
         [self.view insertSubview:self.backCardView belowSubview:self.frontCardView];
@@ -128,31 +130,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     self.currentOffer = frontCardView.offerItem;
 }
 
-- (NSArray *)defaultOffers {
-    // It would be trivial to download these from a web service
-    // as needed, but for the purposes of this sample app we'll
-    // simply store them in memory.
-    return @[
-             [[OfferItem alloc] initWithName:@"Granola Shit"
-                                    image:[UIImage imageNamed:@"1"]
-                                      price:40
-                                    distance:2],
-             [[OfferItem alloc] initWithName:@"Kiss Thing"
-                                    image:[UIImage imageNamed:@"2"]
-                                    price:7
-                                 distance:2],
-             [[OfferItem alloc] initWithName:@"White Faced Motha Fucka"
-                                    image:[UIImage imageNamed:@"3"]
-                                    price:40
-                                 distance:1],
-             [[OfferItem alloc] initWithName:@"Shampoooo"
-                                    image:[UIImage imageNamed:@"4"]
-                                    price:6
-                                 distance:5],
-             ];
-}
-
-- (ChooseOfferView *)popPersonViewWithFrame:(CGRect)frame {
+- (ChooseOfferView *)popOfferViewWithFrame:(CGRect)frame {
     if ([self.offerItems count] == 0) {
         return nil;
     }

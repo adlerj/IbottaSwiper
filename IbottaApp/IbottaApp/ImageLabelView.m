@@ -51,6 +51,10 @@
                               image.size.width,
                               image.size.height);
     self.imageView = [[UIImageView alloc] initWithFrame:frame];
+    
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView.clipsToBounds = YES;
+    
     self.imageView.image = image;
     [self addSubview:self.imageView];
 }
@@ -63,6 +67,7 @@
                               height);
     self.label = [[UILabel alloc] initWithFrame:frame];
     self.label.text = text;
+    self.label.font = [UIFont systemFontOfSize:10.0];
     self.label.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.label];
 }
