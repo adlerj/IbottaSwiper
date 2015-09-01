@@ -11,8 +11,6 @@
 #import "Location+Addon.h"
 
 NSString * const kDistancesUpdatedNotification = @"com.jadler.distancesUpdated";
-NSString * const kLastCalculatedLocation = @"com.jadler.lastCalculatedLocation";
-double const distanceToRecalculate = 1; //Miles
 double const metersInAMile = 1609.34;
 
 @interface JADLocationManager () <CLLocationManagerDelegate>
@@ -48,24 +46,10 @@ double const metersInAMile = 1609.34;
     return _locationManager;
 }
 
-- (BOOL)shouldRecalculateDistances:(CLLocation*)currentLocation
-{
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSData *data = [ud valueForKey:kLastCalculatedLocation];
-    
-    
-    if (data) {
-        CLLocation *lastCalculatedLocation = (CLLocation*)[NSKeyedUnarchiver unarchiveObjectWithData:data];
-        CLLocationDistance distance = [lastCalculatedLocation distanceFromLocation:currentLocation] / metersInAMile;
-        
-        return (distance > distanceToRecalculate);
-    }
-    
-    return YES;
-}
-
 - (void)recalculateDistances:(CLLocation*)currentLocation
 {
+    }
+    
     NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
     
     [context performBlockAndWait:^{
@@ -81,12 +65,6 @@ double const metersInAMile = 1609.34;
         [context save:nil];
     }];
     
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:currentLocation];
-
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    [ud setObject:data forKey:kLastCalculatedLocation];
-    [ud synchronize];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:kDistancesUpdatedNotification object:nil];
 }
 
@@ -97,10 +75,7 @@ double const metersInAMile = 1609.34;
      didUpdateLocations:(NSArray *)locations
 {
     CLLocation *location = (CLLocation*)[locations firstObject];
-    
-    if ([self shouldRecalculateDistances:location]) {
-        [self recalculateDistances:location];
-    }
+    [self recalculateDistances:location];
 }
 
 @end

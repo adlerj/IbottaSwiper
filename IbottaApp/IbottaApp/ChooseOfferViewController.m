@@ -12,7 +12,6 @@
 #import "Retailer+Addon.h"
 #import "Offer+Addon.h"
 #import "JADLocationManager.h"
-#import "MBProgressHUD.h"
 
 static const CGFloat ChooseOfferButtonHorizontalPadding = 80.f;
 static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
@@ -40,7 +39,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self locationsUpdated:nil];
+    [self fetchMoreOffers];
     
     // Display the first ChoosePersonView in front. Users can swipe to indicate
     // whether they like or dislike the person displayed.

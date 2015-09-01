@@ -19,6 +19,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 @property (nonatomic, strong) ImageLabelView *savingsImageLabelView;
 @property (nonatomic, strong) ImageLabelView *distanceImageLabelView;
 @property (nonatomic, weak) Offer *offer;
+@property (nonatomic) BOOL usingKVO;
 @end
 
 @implementation ChooseOfferView
@@ -41,7 +42,10 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
         [self constructInformationView];
         
         if (![self.offer.image.isDownloaded boolValue]) {
+            self.usingKVO = YES;
             [self.offer.image addObserver:self forKeyPath:@"isDownloaded" options:NSKeyValueObservingOptionNew context:nil];
+        } else {
+            self.usingKVO = NO;
         }
     }
     return self;
@@ -49,7 +53,9 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 
 - (void)dealloc
 {
-    [self.offer.image removeObserver:self forKeyPath:@"isDownloaded"];
+    if (self.usingKVO) {
+        [self.offer.image removeObserver:self forKeyPath:@"isDownloaded"];
+    }
 }
 
 #pragma mark - Internal Methods
@@ -69,12 +75,11 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
             image = [UIImage imageWithData:imageData];
         }
     } else {
-        image = [UIImage imageNamed:@"noImage"];
+        image = [UIImage animatedImageNamed:@"loader-" duration:0.03f];
     }
     
     return image;
 }
-
 
 - (void)constructInformationView {
     CGFloat bottomHeight = 60.f;
@@ -162,6 +167,8 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 {
     if (object == self.offer.image && [keyPath isEqualToString:@"isDownloaded"]) {
         self.imageView.image = [self retrieveImage];
+        [self.offer.image removeObserver:self forKeyPath:@"isDownloaded"];
+        self.usingKVO = NO;
     }
 }
 

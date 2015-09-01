@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m0N-B8-Rna">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m0N-B8-Rna">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -16,17 +19,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U8-ah-KYa">
-                                <rect key="frame" x="277" y="285" width="43" height="30"/>
-                                <state key="normal" title="Leggo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y35-B8-hAf">
+                                <rect key="frame" x="26" y="26" width="548" height="548"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y35-B8-hAf" secondAttribute="height" multiplier="1:1" id="vsD-C8-p3f"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U8-ah-KYa">
+                                <rect key="frame" x="190" y="509" width="221" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="3XE-rA-dtv"/>
+                                    <constraint firstAttribute="height" constant="46" id="enb-ja-x3e"/>
+                                    <constraint firstAttribute="width" secondItem="1U8-ah-KYa" secondAttribute="height" multiplier="211:45" id="rDu-8I-uD2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="21"/>
+                                <state key="normal" title="Find Offers Near Me">
+                                    <color key="titleColor" red="0.0010752341552248" green="0.60000002384185791" blue="0.10600259185726829" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rDu-8I-uD2"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="kes-Z1-K8F" kind="show" id="wY9-JS-Gy8"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="1U8-ah-KYa" secondAttribute="bottom" constant="45" id="FsW-lm-mxz"/>
+                            <constraint firstAttribute="centerY" secondItem="Y35-B8-hAf" secondAttribute="centerY" id="LJs-je-uPK"/>
+                            <constraint firstAttribute="centerX" secondItem="Y35-B8-hAf" secondAttribute="centerX" id="Uhj-Fi-Use"/>
+                            <constraint firstItem="Y35-B8-hAf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="WWP-ol-4dI"/>
+                            <constraint firstAttribute="centerX" secondItem="1U8-ah-KYa" secondAttribute="centerX" id="aod-lK-8sJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y35-B8-hAf" secondAttribute="trailing" constant="10" id="lz1-cD-YMV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="idx-VK-YEr">
                         <barButtonItem key="rightBarButtonItem" title="Liked Offers" id="mHA-Hv-ReQ">
@@ -35,6 +64,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Y35-B8-hAf" id="oTH-YD-IjH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,11 +82,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OfferCell" textLabel="Gk0-HL-iba" style="IBUITableViewCellStyleDefault" id="Crm-cn-Tv6" customClass="OfferCell">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Crm-cn-Tv6" id="Pyn-Tg-2SQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gk0-HL-iba">
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,6 +99,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="label" destination="Gk0-HL-iba" id="wIh-Q6-YfW"/>
+                                    <segue destination="Fjc-QY-TqZ" kind="show" identifier="OfferDetailsSegue" id="m9A-44-nIP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,6 +112,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqm-i7-qce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2589" y="208"/>
+        </scene>
+        <!--Offer Details View Controller-->
+        <scene sceneID="SSN-wa-qCd">
+            <objects>
+                <viewController id="Fjc-QY-TqZ" customClass="OfferDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AMu-NN-pUC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jic-2a-c7M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XFw-Cy-ndm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLH-7t-nLI">
+                                <rect key="frame" x="186" y="211" width="210" height="92"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="lLH-7t-nLI" id="pLg-6M-Ek9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OXh-N3-rji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3335" y="208"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tg1-Yz-cdy">
@@ -107,7 +172,7 @@
                     <view key="view" contentMode="scaleToFill" id="CRs-wV-1XY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="K6q-fE-481">
