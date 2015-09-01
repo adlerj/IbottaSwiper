@@ -9,6 +9,7 @@
 #import "LikedOffersTableViewController.h"
 #import "OfferDetailsViewController.h"
 #import "Offer+Addon.h"
+#import "OfferImage+Addon.h"
 #import "OfferCell.h"
 
 @interface LikedOffersTableViewController () <UITableViewDataSource>
@@ -62,9 +63,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         OfferDetailsViewController *destViewController = segue.destinationViewController;
         
-        Offer *offer = [self.likedOffers objectAtIndex:[indexPath row]];
-        
-        destViewController.text = offer.name;
+        destViewController.offer = [self.likedOffers objectAtIndex:[indexPath row]];
     }
 }
 

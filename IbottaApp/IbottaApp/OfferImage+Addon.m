@@ -90,6 +90,26 @@
     return YES;
 }
 
+- (UIImage*)retrieveImage
+{
+    UIImage *image = nil;
+    if ([self.isDownloaded boolValue]) {
+        NSError *error = nil;
+        NSString *imgPath = [[OfferImage imageDirectory] stringByAppendingPathComponent:self.localPath];
+        NSData *imageData = [NSData dataWithContentsOfFile:imgPath options:NSDataReadingUncached error:&error];
+        if (error) {
+            NSLog(@"Error retrieving file: %@", error);
+            image = [UIImage imageNamed:@"noImage"];
+        } else {
+            image = [UIImage imageWithData:imageData];
+        }
+    } else {
+        image = [UIImage animatedImageNamed:@"loader-" duration:0.03f];
+    }
+    return image;
+}
+
+
 - (BOOL)deleteImageWithError:(NSError *__autoreleasing *)error
 {
     if ([self.isDownloaded boolValue]) {

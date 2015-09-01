@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8193.2" systemVersion="14E46" minimumToolsVersion="Automatic">
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -13,6 +13,7 @@
         <attribute name="liked" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="offerID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="offerURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OfferImage" inverseName="offer" inverseEntity="OfferImage" syncable="YES"/>
         <relationship name="retailers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Retailer" inverseName="offers" inverseEntity="Retailer" syncable="YES"/>
     </entity>
@@ -50,9 +51,9 @@
     </entity>
     <elements>
         <element name="Location" positionX="-81" positionY="45" width="128" height="120"/>
-        <element name="Offer" positionX="-198" positionY="117" width="128" height="148"/>
+        <element name="Offer" positionX="-198" positionY="117" width="128" height="165"/>
+        <element name="OfferImage" positionX="-198" positionY="72" width="128" height="103"/>
         <element name="RedemptionData" positionX="-119" positionY="225" width="128" height="118"/>
         <element name="Retailer" positionX="-315" positionY="-79" width="128" height="300"/>
-        <element name="OfferImage" positionX="-198" positionY="72" width="128" height="103"/>
     </elements>
 </model>

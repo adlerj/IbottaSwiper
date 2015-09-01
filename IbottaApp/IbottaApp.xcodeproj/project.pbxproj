@@ -11,7 +11,6 @@
 		1F338E5F1B9505A000F82053 /* OfferImage+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E5E1B9505A000F82053 /* OfferImage+Addon.m */; };
 		1F338E6C1B9524E600F82053 /* LikedOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E6B1B9524E600F82053 /* LikedOffersTableViewController.m */; };
 		1F338E6F1B95277500F82053 /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E6E1B95277500F82053 /* OfferCell.m */; };
-		1F338E7D1B9535B100F82053 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E7C1B9535B100F82053 /* Offer.m */; };
 		1F338E801B9535B200F82053 /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E7F1B9535B200F82053 /* Retailer.m */; };
 		1F338E861B954A8700F82053 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E851B954A8700F82053 /* WelcomeViewController.m */; };
 		1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */; };
@@ -20,6 +19,8 @@
 		1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E31B8E4E1F0057707E /* JADLocationManager.m */; };
 		1F3A17E71B8E566F0057707E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E61B8E566F0057707E /* Location.m */; };
 		1F3A39B71B955BFA0097C92F /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39B61B955BFA0097C92F /* OfferDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1F3A39BC1B9563C40097C92F /* Offer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39B91B9563C40097C92F /* Offer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		1F3A39BD1B9563C40097C92F /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39BB1B9563C40097C92F /* Offer.m */; settings = {ASSET_TAGS = (); }; };
 		1F4ED28B1B8E128C00593A96 /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2881B8E128C00593A96 /* Offers.json */; };
 		1F4ED28C1B8E128C00593A96 /* Retailers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2891B8E128C00593A96 /* Retailers.json */; };
 		1F4ED28D1B8E128C00593A96 /* Store Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED28A1B8E128C00593A96 /* Store Locations.json */; };
@@ -62,8 +63,6 @@
 		1F338E6B1B9524E600F82053 /* LikedOffersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikedOffersTableViewController.m; sourceTree = "<group>"; };
 		1F338E6D1B95277500F82053 /* OfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferCell.h; sourceTree = "<group>"; };
 		1F338E6E1B95277500F82053 /* OfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferCell.m; sourceTree = "<group>"; };
-		1F338E7B1B9535B100F82053 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
-		1F338E7C1B9535B100F82053 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		1F338E7E1B9535B200F82053 /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
 		1F338E7F1B9535B200F82053 /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		1F338E841B954A8700F82053 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
@@ -80,6 +79,10 @@
 		1F3A17E61B8E566F0057707E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		1F3A39B51B955BFA0097C92F /* OfferDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsViewController.h; sourceTree = "<group>"; };
 		1F3A39B61B955BFA0097C92F /* OfferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsViewController.m; sourceTree = "<group>"; };
+		1F3A39B81B9563C40097C92F /* Offer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Offer+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1F3A39B91B9563C40097C92F /* Offer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Offer+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1F3A39BA1B9563C40097C92F /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		1F3A39BB1B9563C40097C92F /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		1F4ED2881B8E128C00593A96 /* Offers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Offers.json; path = ../Offers.json; sourceTree = "<group>"; };
 		1F4ED2891B8E128C00593A96 /* Retailers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Retailers.json; path = ../Retailers.json; sourceTree = "<group>"; };
 		1F4ED28A1B8E128C00593A96 /* Store Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Store Locations.json"; path = "../Store Locations.json"; sourceTree = "<group>"; };
@@ -236,10 +239,12 @@
 			children = (
 				1F4ED2A51B8E1EEE00593A96 /* Categories */,
 				1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */,
+				1F3A39B81B9563C40097C92F /* Offer+CoreDataProperties.h */,
+				1F3A39B91B9563C40097C92F /* Offer+CoreDataProperties.m */,
+				1F3A39BA1B9563C40097C92F /* Offer.h */,
+				1F3A39BB1B9563C40097C92F /* Offer.m */,
 				1F338E7E1B9535B200F82053 /* Retailer.h */,
 				1F338E7F1B9535B200F82053 /* Retailer.m */,
-				1F338E7B1B9535B100F82053 /* Offer.h */,
-				1F338E7C1B9535B100F82053 /* Offer.m */,
 				1F338E571B95054F00F82053 /* OfferImage.h */,
 				1F338E581B95054F00F82053 /* OfferImage.m */,
 				1F3A17E51B8E566F0057707E /* Location.h */,
@@ -463,10 +468,11 @@
 				1FA021EA1B8E668A00D4F27D /* ChooseOfferView.m in Sources */,
 				1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */,
 				1F338E861B954A8700F82053 /* WelcomeViewController.m in Sources */,
-				1F338E7D1B9535B100F82053 /* Offer.m in Sources */,
 				1F585D961B93D112000CF94D /* PreparationViewController.m in Sources */,
+				1F3A39BD1B9563C40097C92F /* Offer.m in Sources */,
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
 				1F338E801B9535B200F82053 /* Retailer.m in Sources */,
+				1F3A39BC1B9563C40097C92F /* Offer+CoreDataProperties.m in Sources */,
 				1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */,
 				1F6075521B92697300D78653 /* Offer+Addon.m in Sources */,
 				1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */,

@@ -142,10 +142,11 @@
             
             NSString *offerID = [NSString stringWithFormat:@"%d",(int)offerDict[@"id"]];
             NSSet *retailerIDs = offerDict[@"retailers"];
-            
+
             Offer *offer = [Offer createOrUpdateOfferWithID:offerID
                                                        name:offerDict[@"name"]
                                                    imageURL:offerDict[@"url"]
+                                                   shareURL:offerDict[@"share_url"]
                                           earningsPotential:offerDict[@"earnings_potential"]];
             
             [offerIDs removeObject:offerID];

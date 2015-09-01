@@ -34,7 +34,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="21"/>
                                 <state key="normal" title="Find Offers Near Me">
-                                    <color key="titleColor" red="0.0010752341552248" green="0.60000002384185791" blue="0.10600259185726829" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -125,16 +125,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLH-7t-nLI">
-                                <rect key="frame" x="186" y="211" width="210" height="92"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLH-7t-nLI">
+                                <rect key="frame" x="20" y="84" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2FX-oq-yiT">
+                                <rect key="frame" x="106" y="107" width="388" height="386"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2FX-oq-yiT" secondAttribute="height" multiplier="286:285" id="gLK-t0-Lgk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okw-5U-azg">
+                                <rect key="frame" x="244" y="506" width="112" height="30"/>
+                                <state key="normal" title="Check Out Offer"/>
+                                <connections>
+                                    <action selector="goToOffer:" destination="Fjc-QY-TqZ" eventType="touchUpInside" id="YnL-8K-AEF"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lLH-7t-nLI" firstAttribute="top" secondItem="AMu-NN-pUC" secondAttribute="bottom" constant="20" id="A6a-5P-B7Q"/>
+                            <constraint firstItem="2FX-oq-yiT" firstAttribute="centerY" secondItem="XFw-Cy-ndm" secondAttribute="centerY" id="SUp-JK-mow"/>
+                            <constraint firstItem="Okw-5U-azg" firstAttribute="centerX" secondItem="XFw-Cy-ndm" secondAttribute="centerX" id="VAl-9w-34F"/>
+                            <constraint firstItem="lLH-7t-nLI" firstAttribute="leading" secondItem="XFw-Cy-ndm" secondAttribute="leadingMargin" id="cuV-WI-Jmk"/>
+                            <constraint firstItem="2FX-oq-yiT" firstAttribute="centerX" secondItem="XFw-Cy-ndm" secondAttribute="centerX" id="f6s-st-h9V"/>
+                            <constraint firstItem="2FX-oq-yiT" firstAttribute="leading" secondItem="XFw-Cy-ndm" secondAttribute="leadingMargin" constant="86" id="gRc-81-H5E"/>
+                            <constraint firstItem="Jic-2a-c7M" firstAttribute="top" secondItem="Okw-5U-azg" secondAttribute="bottom" constant="20" id="u8M-MP-P2r"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="2FX-oq-yiT" id="uDl-nJ-gz2"/>
                         <outlet property="label" destination="lLH-7t-nLI" id="pLg-6M-Ek9"/>
                     </connections>
                 </viewController>
@@ -151,6 +174,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UM9-8J-HCK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -190,6 +214,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="A4t-En-RxS"/>
+        <segue reference="RTt-qW-xZw"/>
     </inferredMetricsTieBreakers>
 </document>

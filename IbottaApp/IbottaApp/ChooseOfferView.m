@@ -32,7 +32,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     self = [super initWithFrame:frame options:options];
     if (self) {
         self.offer = offer;
-        self.imageView.image = [self retrieveImage];
+        self.imageView.image = [self.offer.image retrieveImage];
         
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight |
         UIViewAutoresizingFlexibleWidth |
@@ -59,27 +59,6 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 }
 
 #pragma mark - Internal Methods
-
-- (UIImage*)retrieveImage
-{
-    OfferImage *offerImage = self.offer.image;
-    UIImage *image = nil;
-    if ([offerImage.isDownloaded boolValue]) {
-        NSError *error = nil;
-        NSString *imgPath = [[OfferImage imageDirectory] stringByAppendingPathComponent:offerImage.localPath];
-        NSData *imageData = [NSData dataWithContentsOfFile:imgPath options:NSDataReadingUncached error:&error];
-        if (error) {
-            NSLog(@"Error retrieving file: %@", error);
-            image = [UIImage imageNamed:@"noImage"];
-        } else {
-            image = [UIImage imageWithData:imageData];
-        }
-    } else {
-        image = [UIImage animatedImageNamed:@"loader-" duration:0.03f];
-    }
-    
-    return image;
-}
 
 - (void)constructInformationView {
     CGFloat bottomHeight = 60.f;
@@ -166,7 +145,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
                       context:(void *)context
 {
     if (object == self.offer.image && [keyPath isEqualToString:@"isDownloaded"]) {
-        self.imageView.image = [self retrieveImage];
+        self.imageView.image = [self.offer.image retrieveImage];
         [self.offer.image removeObserver:self forKeyPath:@"isDownloaded"];
         self.usingKVO = NO;
     }

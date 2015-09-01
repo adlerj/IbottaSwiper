@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Offer.h"
 
 @interface OfferDetailsViewController : UIViewController
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic, weak) Offer *offer;
 @end

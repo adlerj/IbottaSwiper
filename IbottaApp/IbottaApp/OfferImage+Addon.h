@@ -16,6 +16,8 @@
 
 - (void)downloadImage;
 
+- (UIImage*)retrieveImage;
+
 - (BOOL)deleteImageWithError:(NSError *__autoreleasing *)error;
 
 @end

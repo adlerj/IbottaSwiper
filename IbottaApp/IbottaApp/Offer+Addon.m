@@ -12,9 +12,10 @@
 @implementation Offer (Addon)
 
 + (Offer*)createOrUpdateOfferWithID:(NSString*)ID
-                                     name:(NSString*)name
-                                 imageURL:(NSString*)imageURL
-                     earningsPotential:(NSNumber*)earningPotential
+                               name:(NSString*)name
+                           imageURL:(NSString*)imageURL
+                           shareURL:(NSString*)shareURL
+                  earningsPotential:(NSNumber*)earningPotential
 {
     NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
     
@@ -27,6 +28,7 @@
     offer.name = name;
     offer.earningsPotential = earningPotential;
     offer.image = [OfferImage offerImageWithURL:imageURL];
+    offer.offerURL = shareURL;
     
     return offer;
 }
