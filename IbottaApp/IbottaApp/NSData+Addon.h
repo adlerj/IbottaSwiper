@@ -11,6 +11,7 @@
 
 @interface NSData (Addon)
 
+///@return the md5 hash for this data
 - (NSString *)md5String;
 
 @end

@@ -10,5 +10,7 @@
 #import "Offer.h"
 
 @interface OfferDetailsViewController : UIViewController
+
+///@warning Must be set before displaying the view
 @property (nonatomic, weak) Offer *offer;
 @end

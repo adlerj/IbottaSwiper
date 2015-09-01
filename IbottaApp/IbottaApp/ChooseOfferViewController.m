@@ -17,6 +17,10 @@ static const CGFloat ChooseOfferButtonHorizontalPadding = 80.f;
 static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 
 @interface ChooseOfferViewController ()
+@property (nonatomic, weak) Offer *currentOffer;
+@property (nonatomic, strong) ChooseOfferView *frontCardView;
+@property (nonatomic, strong) ChooseOfferView *backCardView;
+
 @property (nonatomic, strong) NSMutableArray *offerItems;
 @property (nonatomic, strong) NSOperationQueue *imgDownloadOperationQueue;
 @end
