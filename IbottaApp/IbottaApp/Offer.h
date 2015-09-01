@@ -2,22 +2,24 @@
 //  Offer.h
 //  IbottaApp
 //
-//  Created by Jeffrey Adler on 8/29/15.
+//  Created by Jeffrey Adler on 8/31/15.
 //  Copyright (c) 2015 Jeff. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Retailer;
+@class OfferImage, Retailer;
 
 @interface Offer : NSManagedObject
 
-@property (nonatomic, retain) NSString * offerID;
-@property (nonatomic, retain) NSString * imageURL;
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * earningsPotential;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * offerID;
+@property (nonatomic, retain) NSNumber * distance;
+@property (nonatomic, retain) NSNumber * liked;
 @property (nonatomic, retain) NSSet *retailers;
+@property (nonatomic, retain) OfferImage *image;
 @end
 
 @interface Offer (CoreDataGeneratedAccessors)

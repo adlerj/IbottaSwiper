@@ -7,7 +7,12 @@
 //
 
 #import "Offer.h"
-#import "OfferItem.h"
+
+typedef enum {
+    kLikedStatus_None = 0,
+    kLikedStatus_Liked = 1,
+    kLikedStatus_Disliked = 2
+} LikedStatus;
 
 @interface Offer (Addon)
 
@@ -18,8 +23,14 @@
 
 + (Offer*)fetchOfferForID:(NSString*)ID;
 + (NSArray*)fetchAllOfferIDs;
++ (NSArray*)fetchAllLikedOffers;
 + (void)deleteOffersWithIDs:(NSArray*)IDs;
 
-- (OfferItem*) toOfferItem;
+- (NSString*)displayName;
+
+- (void)setLikedStatus:(LikedStatus)status;
+- (LikedStatus)likedStatus;
+
+- (NSOperation*)createDownloadOperation;
 
 @end

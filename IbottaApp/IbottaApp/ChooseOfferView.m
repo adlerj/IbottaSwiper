@@ -8,6 +8,8 @@
 
 #import "ChooseOfferView.h"
 #import "ImageLabelView.h"
+#import "OfferImage+Addon.h"
+
 
 static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 
@@ -16,6 +18,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) ImageLabelView *savingsImageLabelView;
 @property (nonatomic, strong) ImageLabelView *distanceImageLabelView;
+@property (nonatomic, weak) Offer *offer;
 @end
 
 @implementation ChooseOfferView
@@ -23,12 +26,12 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 #pragma mark - Object Lifecycle
 
 - (instancetype)initWithFrame:(CGRect)frame
-                       offerItem:(OfferItem *)offerItem
+                       offerItem:(Offer *)offer
                       options:(MDCSwipeToChooseViewOptions *)options {
     self = [super initWithFrame:frame options:options];
     if (self) {
-        _offerItem = offerItem;
-        self.imageView.image = _offerItem.image;
+        self.offer = offer;
+        self.imageView.image = [self retrieveImage];
         
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight |
         UIViewAutoresizingFlexibleWidth |
@@ -36,11 +39,42 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
         self.imageView.autoresizingMask = self.autoresizingMask;
         
         [self constructInformationView];
+        
+        if (![self.offer.image.isDownloaded boolValue]) {
+            [self.offer.image addObserver:self forKeyPath:@"isDownloaded" options:NSKeyValueObservingOptionNew context:nil];
+        }
     }
     return self;
 }
 
+- (void)dealloc
+{
+    [self.offer.image removeObserver:self forKeyPath:@"isDownloaded"];
+}
+
 #pragma mark - Internal Methods
+
+- (UIImage*)retrieveImage
+{
+    OfferImage *offerImage = self.offer.image;
+    UIImage *image = nil;
+    if ([offerImage.isDownloaded boolValue]) {
+        NSError *error = nil;
+        NSString *imgPath = [[OfferImage imageDirectory] stringByAppendingPathComponent:offerImage.localPath];
+        NSData *imageData = [NSData dataWithContentsOfFile:imgPath options:NSDataReadingUncached error:&error];
+        if (error) {
+            NSLog(@"Error retrieving file: %@", error);
+            image = [UIImage imageNamed:@"noImage"];
+        } else {
+            image = [UIImage imageWithData:imageData];
+        }
+    } else {
+        image = [UIImage imageNamed:@"noImage"];
+    }
+    
+    return image;
+}
+
 
 - (void)constructInformationView {
     CGFloat bottomHeight = 60.f;
@@ -68,7 +102,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
                               floorf(CGRectGetWidth(_informationView.frame)/2),
                               CGRectGetHeight(_informationView.frame) - topPadding);
     _nameLabel = [[UILabel alloc] initWithFrame:frame];
-    _nameLabel.text = [NSString stringWithFormat:@"%@", _offerItem.name];
+    _nameLabel.text = [NSString stringWithFormat:@"%@", self.offer.name];
     _nameLabel.font = [UIFont systemFontOfSize:12.0];
     [_informationView addSubview:_nameLabel];
 }
@@ -79,7 +113,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    NSString *price = [formatter stringFromNumber:[NSNumber numberWithDouble:self.offerItem.price ]];
+    NSString *price = [formatter stringFromNumber:self.offer.earningsPotential];
     
     
     NSString *text = [NSString stringWithFormat:@"%@", price];
@@ -98,7 +132,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     formatter.maximumFractionDigits = 2;
     
-    NSString *distance = [formatter stringFromNumber:[NSNumber numberWithDouble:self.offerItem.distance ]];
+    NSString *distance = [formatter stringFromNumber:self.offer.distance];
     
     NSString *text = [NSString stringWithFormat:@"%@ Mi.", distance];
     
@@ -118,6 +152,17 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
                                                             text:text];
     view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
     return view;
+}
+
+#pragma mark - KVO
+-(void)observeValueForKeyPath:(NSString *)keyPath
+                     ofObject:(id)object
+                       change:(NSDictionary *)change
+                      context:(void *)context
+{
+    if (object == self.offer.image && [keyPath isEqualToString:@"isDownloaded"]) {
+        self.imageView.image = [self retrieveImage];
+    }
 }
 
 @end

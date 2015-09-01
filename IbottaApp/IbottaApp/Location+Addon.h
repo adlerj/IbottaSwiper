@@ -17,8 +17,10 @@
 + (NSArray*)fetchAllLocations;
 + (NSArray*)fetchAllLocationIDs;
 
-+ (NSArray*)fetchClosestLocations:(int)numberOfLocations withinRange:(double)miles;
++ (NSArray*)fetchClosestLocationsWithUnlikedOffers:(int)numberOfLocations withinRange:(double)miles;
 
 + (void)deleteLocationsWithIDs:(NSArray*)IDs;
+
+- (NSSet*)offers;
 
 @end

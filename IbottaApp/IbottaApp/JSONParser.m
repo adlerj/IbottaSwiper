@@ -154,6 +154,7 @@
                 Retailer *retailer = [Retailer fetchRetailerForID:[retailerID stringValue]];
                 if (retailer) {
                     [offer addRetailersObject:retailer];
+                    [retailer incrementUnlikedOffers];
                 }
             }
             

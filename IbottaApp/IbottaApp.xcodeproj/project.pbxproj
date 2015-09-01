@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F338E591B95054F00F82053 /* OfferImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E581B95054F00F82053 /* OfferImage.m */; };
+		1F338E5F1B9505A000F82053 /* OfferImage+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E5E1B9505A000F82053 /* OfferImage+Addon.m */; };
+		1F338E6C1B9524E600F82053 /* LikedOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E6B1B9524E600F82053 /* LikedOffersTableViewController.m */; };
+		1F338E6F1B95277500F82053 /* OfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E6E1B95277500F82053 /* OfferCell.m */; };
+		1F338E7D1B9535B100F82053 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E7C1B9535B100F82053 /* Offer.m */; };
+		1F338E801B9535B200F82053 /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F338E7F1B9535B200F82053 /* Retailer.m */; };
 		1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */; };
 		1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */; };
 		1F3A17DE1B8E47D90057707E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A17DD1B8E47D90057707E /* CoreLocation.framework */; };
@@ -19,17 +25,14 @@
 		1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2961B8E14A100593A96 /* NSData+Addon.m */; };
 		1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED29A1B8E1AC300593A96 /* JSONParser.m */; };
 		1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */; };
-		1F60754F1B92693A00D78653 /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F60754E1B92693A00D78653 /* Offer.m */; };
+		1F585D961B93D112000CF94D /* PreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F585D951B93D112000CF94D /* PreparationViewController.m */; };
 		1F6075521B92697300D78653 /* Offer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6075511B92697300D78653 /* Offer+Addon.m */; };
-		1F6075551B926B3400D78653 /* Retailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6075541B926B3400D78653 /* Retailer.m */; };
 		1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E61B8E663100D4F27D /* ImageLabelView.m */; };
 		1FA021EA1B8E668A00D4F27D /* ChooseOfferView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */; };
-		1FA021ED1B8E691000D4F27D /* OfferItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EC1B8E691000D4F27D /* OfferItem.m */; };
 		1FA021F01B8E6BF700D4F27D /* ChooseOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */; };
 		1FD0A6621B8FCF76002473EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6611B8FCF76002473EA /* main.m */; };
 		1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6641B8FCF76002473EA /* AppDelegate.m */; };
 		1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */; };
-		1FD0A66B1B8FCF76002473EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0A66A1B8FCF76002473EA /* ViewController.m */; };
 		1FD0A66E1B8FCF76002473EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0A66C1B8FCF76002473EA /* Main.storyboard */; };
 		1FD0A6701B8FCF76002473EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0A66F1B8FCF76002473EA /* Images.xcassets */; };
 		1FD0A6731B8FCF76002473EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0A6711B8FCF76002473EA /* LaunchScreen.xib */; };
@@ -49,6 +52,18 @@
 
 /* Begin PBXFileReference section */
 		0FA9FACAFE6E247CE2627999 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1F338E571B95054F00F82053 /* OfferImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferImage.h; sourceTree = "<group>"; };
+		1F338E581B95054F00F82053 /* OfferImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferImage.m; sourceTree = "<group>"; };
+		1F338E5D1B9505A000F82053 /* OfferImage+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OfferImage+Addon.h"; sourceTree = "<group>"; };
+		1F338E5E1B9505A000F82053 /* OfferImage+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OfferImage+Addon.m"; sourceTree = "<group>"; };
+		1F338E6A1B9524E600F82053 /* LikedOffersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikedOffersTableViewController.h; sourceTree = "<group>"; };
+		1F338E6B1B9524E600F82053 /* LikedOffersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikedOffersTableViewController.m; sourceTree = "<group>"; };
+		1F338E6D1B95277500F82053 /* OfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferCell.h; sourceTree = "<group>"; };
+		1F338E6E1B95277500F82053 /* OfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferCell.m; sourceTree = "<group>"; };
+		1F338E7B1B9535B100F82053 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
+		1F338E7C1B9535B100F82053 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		1F338E7E1B9535B200F82053 /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
+		1F338E7F1B9535B200F82053 /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		1F3A17BB1B8E240A0057707E /* Retailer+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Retailer+Addon.h"; sourceTree = "<group>"; };
 		1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Retailer+Addon.m"; sourceTree = "<group>"; };
 		1F3A17C41B8E25120057707E /* IbottaAppHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IbottaAppHeader.pch; sourceTree = SOURCE_ROOT; };
@@ -70,18 +85,14 @@
 		1F4ED29A1B8E1AC300593A96 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
 		1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedemptionData.h; sourceTree = "<group>"; };
 		1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedemptionData.m; sourceTree = "<group>"; };
-		1F60754D1B92693A00D78653 /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
-		1F60754E1B92693A00D78653 /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
+		1F585D941B93D112000CF94D /* PreparationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparationViewController.h; sourceTree = "<group>"; };
+		1F585D951B93D112000CF94D /* PreparationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreparationViewController.m; sourceTree = "<group>"; };
 		1F6075501B92697300D78653 /* Offer+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Offer+Addon.h"; sourceTree = "<group>"; };
 		1F6075511B92697300D78653 /* Offer+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Offer+Addon.m"; sourceTree = "<group>"; };
-		1F6075531B926B3400D78653 /* Retailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Retailer.h; sourceTree = "<group>"; };
-		1F6075541B926B3400D78653 /* Retailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Retailer.m; sourceTree = "<group>"; };
 		1FA021E51B8E663100D4F27D /* ImageLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLabelView.h; sourceTree = "<group>"; };
 		1FA021E61B8E663100D4F27D /* ImageLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLabelView.m; sourceTree = "<group>"; };
 		1FA021E81B8E668A00D4F27D /* ChooseOfferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOfferView.h; sourceTree = "<group>"; };
 		1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOfferView.m; sourceTree = "<group>"; };
-		1FA021EB1B8E691000D4F27D /* OfferItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferItem.h; sourceTree = "<group>"; };
-		1FA021EC1B8E691000D4F27D /* OfferItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferItem.m; sourceTree = "<group>"; };
 		1FA021EE1B8E6BF700D4F27D /* ChooseOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOfferViewController.h; sourceTree = "<group>"; };
 		1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOfferViewController.m; sourceTree = "<group>"; };
 		1FD0A65C1B8FCF76002473EA /* IbottaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,8 +101,6 @@
 		1FD0A6631B8FCF76002473EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1FD0A6641B8FCF76002473EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1FD0A6671B8FCF76002473EA /* IbottaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IbottaApp.xcdatamodel; sourceTree = "<group>"; };
-		1FD0A6691B8FCF76002473EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1FD0A66A1B8FCF76002473EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1FD0A66D1B8FCF76002473EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FD0A66F1B8FCF76002473EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FD0A6721B8FCF76002473EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -145,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				1F3A17BB1B8E240A0057707E /* Retailer+Addon.h */,
+				1F338E5D1B9505A000F82053 /* OfferImage+Addon.h */,
+				1F338E5E1B9505A000F82053 /* OfferImage+Addon.m */,
 				1F3A17BC1B8E240A0057707E /* Retailer+Addon.m */,
 				1F3A17CB1B8E2B3D0057707E /* Location+Addon.h */,
 				1F3A17CC1B8E2B3D0057707E /* Location+Addon.m */,
@@ -160,7 +171,6 @@
 				1FD0A65E1B8FCF76002473EA /* IbottaApp */,
 				1FD0A67B1B8FCF77002473EA /* IbottaAppTests */,
 				1FD0A65D1B8FCF76002473EA /* Products */,
-				1F3A17DD1B8E47D90057707E /* CoreLocation.framework */,
 				31B99721CC8E48F60936C420 /* Pods */,
 				F9B94BDD631AADFD5CA8B97D /* Frameworks */,
 			);
@@ -220,16 +230,16 @@
 			children = (
 				1F4ED2A51B8E1EEE00593A96 /* Categories */,
 				1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */,
-				1F6075531B926B3400D78653 /* Retailer.h */,
-				1F6075541B926B3400D78653 /* Retailer.m */,
-				1F60754D1B92693A00D78653 /* Offer.h */,
-				1F60754E1B92693A00D78653 /* Offer.m */,
+				1F338E7E1B9535B200F82053 /* Retailer.h */,
+				1F338E7F1B9535B200F82053 /* Retailer.m */,
+				1F338E7B1B9535B100F82053 /* Offer.h */,
+				1F338E7C1B9535B100F82053 /* Offer.m */,
+				1F338E571B95054F00F82053 /* OfferImage.h */,
+				1F338E581B95054F00F82053 /* OfferImage.m */,
 				1F3A17E51B8E566F0057707E /* Location.h */,
 				1F3A17E61B8E566F0057707E /* Location.m */,
 				1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */,
 				1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */,
-				1FA021EB1B8E691000D4F27D /* OfferItem.h */,
-				1FA021EC1B8E691000D4F27D /* OfferItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -237,10 +247,12 @@
 		1FD0A6891B8FCFC1002473EA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1FD0A6691B8FCF76002473EA /* ViewController.h */,
-				1FD0A66A1B8FCF76002473EA /* ViewController.m */,
 				1FA021EE1B8E6BF700D4F27D /* ChooseOfferViewController.h */,
 				1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */,
+				1F585D941B93D112000CF94D /* PreparationViewController.h */,
+				1F585D951B93D112000CF94D /* PreparationViewController.m */,
+				1F338E6A1B9524E600F82053 /* LikedOffersTableViewController.h */,
+				1F338E6B1B9524E600F82053 /* LikedOffersTableViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -253,6 +265,8 @@
 				1FA021E61B8E663100D4F27D /* ImageLabelView.m */,
 				1FA021E81B8E668A00D4F27D /* ChooseOfferView.h */,
 				1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */,
+				1F338E6D1B95277500F82053 /* OfferCell.h */,
+				1F338E6E1B95277500F82053 /* OfferCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -287,6 +301,7 @@
 		F9B94BDD631AADFD5CA8B97D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F3A17DD1B8E47D90057707E /* CoreLocation.framework */,
 				DB2B695C93218A19F89DA328 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -430,22 +445,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F338E6F1B95277500F82053 /* OfferCell.m in Sources */,
 				1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */,
+				1F338E591B95054F00F82053 /* OfferImage.m in Sources */,
 				1F3A17E71B8E566F0057707E /* Location.m in Sources */,
 				1FA021EA1B8E668A00D4F27D /* ChooseOfferView.m in Sources */,
 				1F3A17CD1B8E2B3D0057707E /* Location+Addon.m in Sources */,
+				1F338E7D1B9535B100F82053 /* Offer.m in Sources */,
+				1F585D961B93D112000CF94D /* PreparationViewController.m in Sources */,
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
+				1F338E801B9535B200F82053 /* Retailer.m in Sources */,
 				1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */,
-				1F60754F1B92693A00D78653 /* Offer.m in Sources */,
 				1F6075521B92697300D78653 /* Offer+Addon.m in Sources */,
 				1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */,
-				1FA021ED1B8E691000D4F27D /* OfferItem.m in Sources */,
 				1FD0A6621B8FCF76002473EA /* main.m in Sources */,
-				1FD0A66B1B8FCF76002473EA /* ViewController.m in Sources */,
+				1F338E5F1B9505A000F82053 /* OfferImage+Addon.m in Sources */,
 				1F3A17BD1B8E240A0057707E /* Retailer+Addon.m in Sources */,
-				1F6075551B926B3400D78653 /* Retailer.m in Sources */,
 				1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */,
 				1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */,
+				1F338E6C1B9524E600F82053 /* LikedOffersTableViewController.m in Sources */,
 				1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */,
 				1F4ED2911B8E13EE00593A96 /* JADCheckSumHandler.m in Sources */,
 				1FA021F01B8E6BF700D4F27D /* ChooseOfferViewController.m in Sources */,

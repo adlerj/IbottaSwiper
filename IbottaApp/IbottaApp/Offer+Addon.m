@@ -7,6 +7,7 @@
 //
 
 #import "Offer+Addon.h"
+#import "OfferImage+Addon.h"
 
 @implementation Offer (Addon)
 
@@ -24,8 +25,8 @@
     
     offer.offerID = ID;
     offer.name = name;
-    offer.imageURL = imageURL;
     offer.earningsPotential = earningPotential;
+    offer.image = [OfferImage offerImageWithURL:imageURL];
     
     return offer;
 }
@@ -39,6 +40,16 @@
     request.predicate = [NSPredicate predicateWithFormat:@"offerID == %@", ID];
     
     return [[context executeFetchRequest:request error:nil] firstObject];
+}
+
++ (NSArray*)fetchAllLikedOffers
+{
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Offer"];
+    request.predicate = [NSPredicate predicateWithFormat:@"liked == %@", [NSNumber numberWithInt:kLikedStatus_Liked]];
+    
+    return [context executeFetchRequest:request error:nil];
 }
 
 + (NSArray*)fetchAllOfferIDs
@@ -67,15 +78,35 @@
     }
 }
 
-- (OfferItem*) toOfferItem
+- (NSString*)displayName
 {
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageURL]];
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    return [[OfferItem alloc] initWithName:self.name
-                                     image:image
-                                     price:[self.earningsPotential doubleValue]];
+    return [self.name stringByReplacingOccurrencesOfString:@"Â®" withString:@" -"];
 }
 
+- (void)setLikedStatus:(LikedStatus)status
+{
+    self.liked = [NSNumber numberWithInt:status];
+    if (status == kLikedStatus_Disliked) {
+        NSError *error = nil;
+        [self.image deleteImageWithError:&error];
+        
+        if (error) {
+            NSLog(@"Error deleting image: %@", error);
+        }
+    }
+}
+
+- (LikedStatus)likedStatus
+{
+    return (LikedStatus)[self.liked intValue];
+}
+
+- (NSOperation*)createDownloadOperation
+{
+    NSInvocationOperation* operation = [[NSInvocationOperation alloc] initWithTarget:self.image
+                                                                            selector:@selector(downloadImage) object:nil];
+    
+    return operation;
+}
 
 @end

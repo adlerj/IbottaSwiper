@@ -2,7 +2,7 @@
 //  Retailer.m
 //  IbottaApp
 //
-//  Created by Jeffrey Adler on 8/29/15.
+//  Created by Jeffrey Adler on 8/31/15.
 //  Copyright (c) 2015 Jeff. All rights reserved.
 //
 
@@ -27,8 +27,9 @@
 @dynamic retailerID;
 @dynamic sortOrder;
 @dynamic verificationType;
+@dynamic unlikedOffers;
 @dynamic locations;
-@dynamic redemptionData;
 @dynamic offers;
+@dynamic redemptionData;
 
 @end

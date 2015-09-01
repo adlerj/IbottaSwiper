@@ -11,7 +11,7 @@
 
 @interface ChooseOfferViewController : UIViewController <MDCSwipeToChooseDelegate>
 
-@property (nonatomic, strong) OfferItem *currentOffer;
+@property (nonatomic, weak) Offer *currentOffer;
 @property (nonatomic, strong) ChooseOfferView *frontCardView;
 @property (nonatomic, strong) ChooseOfferView *backCardView;
 

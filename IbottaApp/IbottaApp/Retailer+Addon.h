@@ -20,4 +20,8 @@
 + (NSArray*)fetchAllRetailerIDs;
 
 + (void)deleteRetailersWithIDs:(NSArray*)IDs;
+
+- (void)incrementUnlikedOffers;
+
+- (void)decrementUnlikedOffers;
 @end

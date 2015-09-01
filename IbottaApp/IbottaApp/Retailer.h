@@ -2,7 +2,7 @@
 //  Retailer.h
 //  IbottaApp
 //
-//  Created by Jeffrey Adler on 8/29/15.
+//  Created by Jeffrey Adler on 8/31/15.
 //  Copyright (c) 2015 Jeff. All rights reserved.
 //
 
@@ -26,9 +26,10 @@
 @property (nonatomic, retain) NSString * retailerID;
 @property (nonatomic, retain) NSNumber * sortOrder;
 @property (nonatomic, retain) NSNumber * verificationType;
+@property (nonatomic, retain) NSNumber * unlikedOffers;
 @property (nonatomic, retain) NSSet *locations;
-@property (nonatomic, retain) RedemptionData *redemptionData;
 @property (nonatomic, retain) NSSet *offers;
+@property (nonatomic, retain) RedemptionData *redemptionData;
 @end
 
 @interface Retailer (CoreDataGeneratedAccessors)

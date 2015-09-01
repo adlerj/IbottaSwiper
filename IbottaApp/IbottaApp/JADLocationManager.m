@@ -26,8 +26,8 @@ double const metersInAMile = 1609.34;
     self = [super init];
     
     if (self) {
-        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
-            [self.locationManager requestAlwaysAuthorization];
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
         }
         
         [self.locationManager startUpdatingLocation];

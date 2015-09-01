@@ -7,32 +7,32 @@
 //
 
 #import "ChooseOfferViewController.h"
-#import "OfferItem.h"
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
 #import "Location+Addon.h"
 #import "Retailer+Addon.h"
 #import "Offer+Addon.h"
 #import "JADLocationManager.h"
+#import "MBProgressHUD.h"
 
 static const CGFloat ChooseOfferButtonHorizontalPadding = 80.f;
 static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 
 @interface ChooseOfferViewController ()
 @property (nonatomic, strong) NSMutableArray *offerItems;
+@property (nonatomic, strong) NSOperationQueue *imgDownloadOperationQueue;
 @end
 
 @implementation ChooseOfferViewController
 
 #pragma mark - Object Lifecycle
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        // This view controller maintains a list of ChoosePersonView
-        // instances to display.
+- (NSMutableArray *)offerItems
+{
+    if (!_offerItems) {
         _offerItems = [NSMutableArray array];
     }
-    return self;
+    
+    return _offerItems;
 }
 
 #pragma mark - UIViewController Overrides
@@ -61,25 +61,56 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationsUpdated:) name:kDistancesUpdatedNotification object:nil];
 }
 
+- (NSOperationQueue *)imgDownloadOperationQueue
+{
+    if (!_imgDownloadOperationQueue) {
+        self.imgDownloadOperationQueue = [[NSOperationQueue alloc] init];
+        self.imgDownloadOperationQueue.maxConcurrentOperationCount = 5;
+    }
+    
+    return _imgDownloadOperationQueue;
+}
+
+- (void)fetchMoreOffers
+{
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    
+    [context performBlockAndWait:^{
+        NSArray *closestLocations = [Location fetchClosestLocationsWithUnlikedOffers:10 withinRange:20];
+        
+        if ([closestLocations count]) {
+            
+            for (Location *location in closestLocations) {
+                NSSet *offers = location.offers;
+                
+                for (Offer *offer in offers) {
+                    if (offer.likedStatus != kLikedStatus_None) {
+                        continue;
+                    }
+                    
+                    offer.distance = location.distance;
+                    [self.imgDownloadOperationQueue addOperation:[offer createDownloadOperation]];
+                    [self.offerItems addObject:offer];
+                }
+                [context save:nil];
+            }
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Nearby Offers"
+                                                                           message:@"There are no offers near your location."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }]];
+            
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }];
+}
+
 - (void)locationsUpdated:(NSNotification*)note
 {
-    NSArray *closestLocations = [Location fetchClosestLocations:50 withinRange:20];
-    
-    for (Location *location in closestLocations) {
-        Retailer *retailer = location.retailer;
-        NSSet *offers = retailer.offers;
-        for (Offer *offer in offers) {
-            OfferItem *offerItem = [offer toOfferItem];
-            offerItem.distance = [location.distance doubleValue];
-            [self.offerItems addObject:offerItem];
-        }
-    }
-    
-    if (![closestLocations count]) {
-        NSLog(@"Sorry there are no location around you");
-    } else {
-        [self.view setNeedsDisplay];
-    }
+    [self fetchMoreOffers];
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
@@ -90,18 +121,30 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 
 // This is called when a user didn't fully swipe left or right.
 - (void)viewDidCancelSwipe:(UIView *)view {
-    NSLog(@"You couldn't decide on %@.", self.currentOffer.name);
+    NSLog(@"You couldn't decide on %@.", self.currentOffer.displayName);
 }
 
 // This is called then a user swipes the view fully left or right.
 - (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
     // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
     // and "LIKED" on swipes to the right.
-    if (direction == MDCSwipeDirectionLeft) {
-        NSLog(@"You noped %@.", self.currentOffer.name);
-    } else {
-        NSLog(@"You liked %@.", self.currentOffer.name);
-    }
+    
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    [context performBlockAndWait:^{
+        LikedStatus status = kLikedStatus_None;
+        if (direction == MDCSwipeDirectionLeft) {
+            status = kLikedStatus_Disliked;
+        } else {
+            status = kLikedStatus_Liked;
+        }
+        
+        for (Retailer *retailer in self.currentOffer.retailers) {
+            [retailer decrementUnlikedOffers];
+        }
+        
+        [self.currentOffer setLikedStatus:status];
+        [context save:nil];
+    }];
     
     // MDCSwipeToChooseView removes the view from the view hierarchy
     // after it is swiped (this behavior can be customized via the
@@ -127,7 +170,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     // Keep track of the person currently being chosen.
     // Quick and dirty, just for the purposes of this sample app.
     _frontCardView = frontCardView;
-    self.currentOffer = frontCardView.offerItem;
+    self.currentOffer = frontCardView.offer;
 }
 
 - (ChooseOfferView *)popOfferViewWithFrame:(CGRect)frame {
@@ -156,6 +199,11 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
                                                                     offerItem:self.offerItems[0]
                                                                    options:options];
     [self.offerItems removeObjectAtIndex:0];
+    
+    if ([self.offerItems count] < 10) {
+        [self fetchMoreOffers];
+    }
+    
     return offerView;
 }
 

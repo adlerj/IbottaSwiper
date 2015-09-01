@@ -7,12 +7,12 @@
 //
 
 #import <MDCSwipeToChoose/MDCSwipeToChoose.h>
-#import "OfferItem.h"
+#import "Offer+Addon.h"
 
 @interface ChooseOfferView : MDCSwipeToChooseView
-@property (nonatomic, strong, readonly) OfferItem *offerItem;
+@property (nonatomic, weak, readonly) Offer *offer;
 
 - (instancetype)initWithFrame:(CGRect)frame
-                       offerItem:(OfferItem *)offerItem
+                       offerItem:(Offer *)offer
                       options:(MDCSwipeToChooseViewOptions *)options;
 @end

@@ -70,5 +70,17 @@
     }
 }
 
+- (void)incrementUnlikedOffers
+{
+    int sum = [self.unlikedOffers intValue] + 1;
+    self.unlikedOffers = [NSNumber numberWithInt:sum];
+}
+
+- (void)decrementUnlikedOffers
+{
+    int difference = [self.unlikedOffers intValue] - 1;
+    self.unlikedOffers = [NSNumber numberWithInt:difference];
+}
+
 
 @end
