@@ -85,6 +85,30 @@
     return [self.name stringByReplacingOccurrencesOfString:@"Â®" withString:@" -"];
 }
 
+- (NSString*)displayDistance
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    formatter.maximumFractionDigits = 2;
+    
+    NSString *distance = [formatter stringFromNumber:self.distance];
+    
+    NSString *text = [NSString stringWithFormat:@"%@ Mi.", distance];
+    
+    return text;
+}
+
+- (NSString*)displayPotentialEarnings
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSString *price = [formatter stringFromNumber:self.earningsPotential];
+    
+    
+    NSString *text = [NSString stringWithFormat:@"%@", price];
+    return text;
+}
+
 - (void)setLikedStatus:(LikedStatus)status
 {
     self.liked = [NSNumber numberWithInt:status];

@@ -11,14 +11,24 @@
 
 @class OfferImage, Retailer;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface Offer : NSManagedObject
 
-// Insert code here to declare functionality of your managed object subclass
+@property (nonatomic, retain) NSNumber *distance;
+@property (nonatomic, retain) NSNumber *earningsPotential;
+@property (nonatomic, retain) NSNumber *liked;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *offerID;
+@property (nonatomic, retain) NSString *offerURL;
+@property (nonatomic, retain) OfferImage *image;
+@property (nonatomic, retain) NSSet *retailers;
 
 @end
 
-NS_ASSUME_NONNULL_END
+@interface Offer (CoreDataGeneratedAccessors)
 
-#import "Offer+CoreDataProperties.h"
+- (void)addRetailersObject:(Retailer *)value;
+- (void)removeRetailersObject:(Retailer *)value;
+- (void)addRetailers:(NSSet *)values;
+- (void)removeRetailers:(NSSet *)values;
+
+@end

@@ -12,6 +12,13 @@
 
 @implementation Offer
 
-// Insert code here to add functionality to your managed object subclass
+@dynamic distance;
+@dynamic earningsPotential;
+@dynamic liked;
+@dynamic name;
+@dynamic offerID;
+@dynamic offerURL;
+@dynamic image;
+@dynamic retailers;
 
 @end

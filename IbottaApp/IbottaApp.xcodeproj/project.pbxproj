@@ -19,7 +19,6 @@
 		1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E31B8E4E1F0057707E /* JADLocationManager.m */; };
 		1F3A17E71B8E566F0057707E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E61B8E566F0057707E /* Location.m */; };
 		1F3A39B71B955BFA0097C92F /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39B61B955BFA0097C92F /* OfferDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1F3A39BC1B9563C40097C92F /* Offer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39B91B9563C40097C92F /* Offer+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 		1F3A39BD1B9563C40097C92F /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39BB1B9563C40097C92F /* Offer.m */; settings = {ASSET_TAGS = (); }; };
 		1F4ED28B1B8E128C00593A96 /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2881B8E128C00593A96 /* Offers.json */; };
 		1F4ED28C1B8E128C00593A96 /* Retailers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2891B8E128C00593A96 /* Retailers.json */; };
@@ -79,8 +78,6 @@
 		1F3A17E61B8E566F0057707E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		1F3A39B51B955BFA0097C92F /* OfferDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferDetailsViewController.h; sourceTree = "<group>"; };
 		1F3A39B61B955BFA0097C92F /* OfferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsViewController.m; sourceTree = "<group>"; };
-		1F3A39B81B9563C40097C92F /* Offer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Offer+CoreDataProperties.h"; sourceTree = "<group>"; };
-		1F3A39B91B9563C40097C92F /* Offer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Offer+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1F3A39BA1B9563C40097C92F /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		1F3A39BB1B9563C40097C92F /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
 		1F4ED2881B8E128C00593A96 /* Offers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Offers.json; path = ../Offers.json; sourceTree = "<group>"; };
@@ -239,8 +236,6 @@
 			children = (
 				1F4ED2A51B8E1EEE00593A96 /* Categories */,
 				1FD0A6661B8FCF76002473EA /* IbottaApp.xcdatamodeld */,
-				1F3A39B81B9563C40097C92F /* Offer+CoreDataProperties.h */,
-				1F3A39B91B9563C40097C92F /* Offer+CoreDataProperties.m */,
 				1F3A39BA1B9563C40097C92F /* Offer.h */,
 				1F3A39BB1B9563C40097C92F /* Offer.m */,
 				1F338E7E1B9535B200F82053 /* Retailer.h */,
@@ -472,7 +467,6 @@
 				1F3A39BD1B9563C40097C92F /* Offer.m in Sources */,
 				1FD0A6651B8FCF76002473EA /* AppDelegate.m in Sources */,
 				1F338E801B9535B200F82053 /* Retailer.m in Sources */,
-				1F3A39BC1B9563C40097C92F /* Offer+CoreDataProperties.m in Sources */,
 				1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */,
 				1F6075521B92697300D78653 /* Offer+Addon.m in Sources */,
 				1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */,

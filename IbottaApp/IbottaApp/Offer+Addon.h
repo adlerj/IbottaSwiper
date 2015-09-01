@@ -48,8 +48,14 @@ typedef enum {
 ///@param IDs the offerIDs for offers to be deleted
 + (void)deleteOffersWithIDs:(NSArray*)IDs;
 
-//@return the offer name with minor formatting to remove ugly characters
+///@return the offer name with minor formatting to remove ugly characters
 - (NSString*)displayName;
+
+///@return the distance as a rounded string with units(miles)
+- (NSString*)displayDistance;
+
+///@return the potential earnings as currency
+- (NSString*)displayPotentialEarnings;
 
 ///@param status The likedStatus this offer is being set to
 - (void)setLikedStatus:(LikedStatus)status;

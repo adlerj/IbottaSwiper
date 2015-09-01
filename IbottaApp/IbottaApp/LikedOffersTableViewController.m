@@ -12,8 +12,8 @@
 #import "OfferImage+Addon.h"
 #import "OfferCell.h"
 
-@interface LikedOffersTableViewController () <UITableViewDataSource>
-@property (nonatomic, weak) NSArray *likedOffers;
+@interface LikedOffersTableViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) NSArray *likedOffers;
 @end
 
 @implementation LikedOffersTableViewController
@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (NSArray *)likedOffers
@@ -32,6 +34,31 @@
         }];
     }
     return _likedOffers;
+}
+
+#pragma mark - Table view delegate
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSMutableArray *mutableLikedOffers = [self.likedOffers mutableCopy];
+        Offer *removedOffer = [mutableLikedOffers objectAtIndex:indexPath.row];
+        
+        NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+        [context performBlockAndWait:^{
+            [removedOffer setLikedStatus:kLikedStatus_Disliked];
+            [context save:nil];
+        }];
+        
+        [mutableLikedOffers removeObject:removedOffer];
+        self.likedOffers = [mutableLikedOffers copy];
+        
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Table view data source

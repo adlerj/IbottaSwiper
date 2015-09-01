@@ -95,12 +95,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     CGFloat rightPadding = 30.f;
     UIImage *image = [UIImage imageNamed:@"savings"];
     
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    NSString *price = [formatter stringFromNumber:self.offer.earningsPotential];
-    
-    
-    NSString *text = [NSString stringWithFormat:@"%@", price];
+    NSString *text = [self.offer displayPotentialEarnings];
     
     _savingsImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetWidth(_informationView.bounds) - rightPadding
                                                       image:image
@@ -112,13 +107,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     CGFloat rightPadding = 30.f;
     UIImage *image = [UIImage imageNamed:@"distance"];
     
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    formatter.maximumFractionDigits = 2;
-    
-    NSString *distance = [formatter stringFromNumber:self.offer.distance];
-    
-    NSString *text = [NSString stringWithFormat:@"%@ Mi.", distance];
+    NSString *text = [self.offer displayDistance];
     
     _distanceImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetMinX(_savingsImageLabelView.frame) - rightPadding
                                                        image:image

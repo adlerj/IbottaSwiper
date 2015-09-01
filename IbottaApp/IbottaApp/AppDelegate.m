@@ -39,11 +39,7 @@
     
     self.locationManager = [[JADLocationManager alloc] init];
     
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
-//    
-//    self.window.rootViewController = [ChooseOfferViewController new];
+    [self configureUIAppearance];
 
     return YES;
 }
@@ -151,6 +147,14 @@
             abort();
         }
     }
+}
+
+#pragma mark - UIAppearance
+
+- (void)configureUIAppearance
+{
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"Arial Rounded MT Bold" size:15]}
+                                                forState:UIControlStateNormal];
 }
 
 @end

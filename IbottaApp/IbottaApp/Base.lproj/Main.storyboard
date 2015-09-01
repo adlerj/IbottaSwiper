@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m0N-B8-Rna">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m0N-B8-Rna">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -19,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y35-B8-hAf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y35-B8-hAf">
                                 <rect key="frame" x="26" y="26" width="548" height="548"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Y35-B8-hAf" secondAttribute="height" multiplier="1:1" id="vsD-C8-p3f"/>
@@ -72,14 +71,15 @@
             </objects>
             <point key="canvasLocation" x="1095" y="202"/>
         </scene>
-        <!--Liked Offers Table View Controller-->
+        <!--Title-->
         <scene sceneID="iWo-RX-cAQ">
             <objects>
                 <tableViewController id="zzK-oG-YAa" customClass="LikedOffersTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="He1-Il-yOW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="He1-Il-yOW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OfferCell" textLabel="Gk0-HL-iba" style="IBUITableViewCellStyleDefault" id="Crm-cn-Tv6" customClass="OfferCell">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
@@ -91,12 +91,13 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gk0-HL-iba">
                                             <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
+                                            <color key="textColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="label" destination="Gk0-HL-iba" id="wIh-Q6-YfW"/>
                                     <segue destination="Fjc-QY-TqZ" kind="show" identifier="OfferDetailsSegue" id="m9A-44-nIP"/>
@@ -108,6 +109,7 @@
                             <outlet property="delegate" destination="zzK-oG-YAa" id="CBx-6B-FNH"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="ESB-gc-HQJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqm-i7-qce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,40 +127,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLH-7t-nLI">
-                                <rect key="frame" x="20" y="84" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2FX-oq-yiT">
-                                <rect key="frame" x="106" y="107" width="388" height="386"/>
+                                <rect key="frame" x="144" y="145" width="312" height="310"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2FX-oq-yiT" secondAttribute="height" multiplier="286:285" id="gLK-t0-Lgk"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okw-5U-azg">
-                                <rect key="frame" x="244" y="506" width="112" height="30"/>
-                                <state key="normal" title="Check Out Offer"/>
+                                <rect key="frame" x="240" y="505" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1VH-G0-7hP"/>
+                                    <constraint firstAttribute="width" constant="120" id="iHR-m4-c6s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <state key="normal" title="Open in Ibotta"/>
                                 <connections>
                                     <action selector="goToOffer:" destination="Fjc-QY-TqZ" eventType="touchUpInside" id="YnL-8K-AEF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-nA-ijO">
+                                <rect key="frame" x="21" y="89" width="559" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="LmR-1Z-MGD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <color key="textColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="lLH-7t-nLI" firstAttribute="top" secondItem="AMu-NN-pUC" secondAttribute="bottom" constant="20" id="A6a-5P-B7Q"/>
+                            <constraint firstItem="a0s-nA-ijO" firstAttribute="centerX" secondItem="XFw-Cy-ndm" secondAttribute="centerX" id="8Oh-Iz-Wt0"/>
+                            <constraint firstItem="a0s-nA-ijO" firstAttribute="top" secondItem="AMu-NN-pUC" secondAttribute="bottom" constant="25" id="Kzi-zA-HNY"/>
                             <constraint firstItem="2FX-oq-yiT" firstAttribute="centerY" secondItem="XFw-Cy-ndm" secondAttribute="centerY" id="SUp-JK-mow"/>
                             <constraint firstItem="Okw-5U-azg" firstAttribute="centerX" secondItem="XFw-Cy-ndm" secondAttribute="centerX" id="VAl-9w-34F"/>
-                            <constraint firstItem="lLH-7t-nLI" firstAttribute="leading" secondItem="XFw-Cy-ndm" secondAttribute="leadingMargin" id="cuV-WI-Jmk"/>
                             <constraint firstItem="2FX-oq-yiT" firstAttribute="centerX" secondItem="XFw-Cy-ndm" secondAttribute="centerX" id="f6s-st-h9V"/>
                             <constraint firstItem="2FX-oq-yiT" firstAttribute="leading" secondItem="XFw-Cy-ndm" secondAttribute="leadingMargin" constant="86" id="gRc-81-H5E"/>
-                            <constraint firstItem="Jic-2a-c7M" firstAttribute="top" secondItem="Okw-5U-azg" secondAttribute="bottom" constant="20" id="u8M-MP-P2r"/>
+                            <constraint firstItem="2FX-oq-yiT" firstAttribute="top" secondItem="a0s-nA-ijO" secondAttribute="bottom" constant="30" id="gWe-Gh-V2n"/>
+                            <constraint firstItem="Okw-5U-azg" firstAttribute="top" secondItem="2FX-oq-yiT" secondAttribute="bottom" constant="50" id="sby-Kc-UrP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a0s-nA-ijO" secondAttribute="trailing" id="vAB-kS-6uX"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gRc-81-H5E"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="shv-Qm-aoy">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="M19-gd-pZK">
+                            <connections>
+                                <action selector="openOfferInWeb:" destination="Fjc-QY-TqZ" id="SRh-GN-UyR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="2FX-oq-yiT" id="uDl-nJ-gz2"/>
-                        <outlet property="label" destination="lLH-7t-nLI" id="pLg-6M-Ek9"/>
+                        <outlet property="infoLabel" destination="a0s-nA-ijO" id="Xw4-ga-fZn"/>
+                        <outlet property="openSiteButton" destination="M19-gd-pZK" id="Cpm-Q4-gQD"/>
+                        <outlet property="viewOfferButton" destination="Okw-5U-azg" id="OMF-ZH-2GA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OXh-N3-rji" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +211,7 @@
             </objects>
             <point key="canvasLocation" x="225" y="202"/>
         </scene>
-        <!--Title-->
+        <!--Choose Offer View Controller-->
         <scene sceneID="2vU-GT-8B8">
             <objects>
                 <viewController id="kes-Z1-K8F" customClass="ChooseOfferViewController" sceneMemberID="viewController">
@@ -199,7 +225,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="K6q-fE-481">
+                    <navigationItem key="navigationItem" id="K6q-fE-481">
                         <barButtonItem key="rightBarButtonItem" title="Liked Offers" id="qjG-vo-4ao">
                             <connections>
                                 <segue destination="zzK-oG-YAa" kind="show" id="A4t-En-RxS"/>

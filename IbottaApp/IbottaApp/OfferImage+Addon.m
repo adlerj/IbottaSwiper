@@ -109,7 +109,6 @@
     return image;
 }
 
-
 - (BOOL)deleteImageWithError:(NSError *__autoreleasing *)error
 {
     if ([self.isDownloaded boolValue]) {
