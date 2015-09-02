@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FD0A65B1B8FCF76002473EA"
-               BuildableName = "IbottaApp.app"
-               BlueprintName = "IbottaApp"
-               ReferencedContainer = "container:IbottaApp.xcodeproj">
+               BuildableName = "IbottaSwiper.app"
+               BlueprintName = "IbottaSwiper"
+               ReferencedContainer = "container:IbottaSwiper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FD0A6771B8FCF77002473EA"
-               BuildableName = "IbottaAppTests.xctest"
-               BlueprintName = "IbottaAppTests"
-               ReferencedContainer = "container:IbottaApp.xcodeproj">
+               BuildableName = "IbottaSwiperTests.xctest"
+               BlueprintName = "IbottaSwiperTests"
+               ReferencedContainer = "container:IbottaSwiper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FD0A6771B8FCF77002473EA"
-               BuildableName = "IbottaAppTests.xctest"
-               BlueprintName = "IbottaAppTests"
-               ReferencedContainer = "container:IbottaApp.xcodeproj">
+               BuildableName = "IbottaSwiperTests.xctest"
+               BlueprintName = "IbottaSwiperTests"
+               ReferencedContainer = "container:IbottaSwiper.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FD0A65B1B8FCF76002473EA"
-            BuildableName = "IbottaApp.app"
-            BlueprintName = "IbottaApp"
-            ReferencedContainer = "container:IbottaApp.xcodeproj">
+            BuildableName = "IbottaSwiper.app"
+            BlueprintName = "IbottaSwiper"
+            ReferencedContainer = "container:IbottaSwiper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FD0A65B1B8FCF76002473EA"
-            BuildableName = "IbottaApp.app"
-            BlueprintName = "IbottaApp"
-            ReferencedContainer = "container:IbottaApp.xcodeproj">
+            BuildableName = "IbottaSwiper.app"
+            BlueprintName = "IbottaSwiper"
+            ReferencedContainer = "container:IbottaSwiper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FD0A65B1B8FCF76002473EA"
-            BuildableName = "IbottaApp.app"
-            BlueprintName = "IbottaApp"
-            ReferencedContainer = "container:IbottaApp.xcodeproj">
+            BuildableName = "IbottaSwiper.app"
+            BlueprintName = "IbottaSwiper"
+            ReferencedContainer = "container:IbottaSwiper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

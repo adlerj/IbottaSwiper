@@ -22,37 +22,17 @@
         <attribute name="localPath" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="offer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Offer" inverseName="image" inverseEntity="Offer" syncable="YES"/>
     </entity>
-    <entity name="RedemptionData" representedClassName="RedemptionData" syncable="YES">
-        <attribute name="additionalIntructions" optional="YES" attributeType="Binary" syncable="YES"/>
-        <attribute name="maxAge" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="receiptName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="redeemString" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="retailer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Retailer" inverseName="redemptionData" inverseEntity="Retailer" syncable="YES"/>
-    </entity>
     <entity name="Retailer" representedClassName="Retailer" syncable="YES">
-        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="anyBrand" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="anyBrandFullURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="anyBrandIconURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="barcode" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="cardSignupURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="exclusiveImageURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="featured" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="iconURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="retailerID" attributeType="String" syncable="YES"/>
-        <attribute name="sortOrder" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="unlikedOffers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="verificationType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Location" inverseName="retailer" inverseEntity="Location" syncable="YES"/>
         <relationship name="offers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Offer" inverseName="retailers" inverseEntity="Offer" syncable="YES"/>
-        <relationship name="redemptionData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RedemptionData" inverseName="retailer" inverseEntity="RedemptionData" syncable="YES"/>
     </entity>
     <elements>
         <element name="Location" positionX="-81" positionY="45" width="128" height="120"/>
         <element name="Offer" positionX="-198" positionY="117" width="128" height="150"/>
         <element name="OfferImage" positionX="-198" positionY="72" width="128" height="103"/>
-        <element name="RedemptionData" positionX="-119" positionY="225" width="128" height="118"/>
-        <element name="Retailer" positionX="-315" positionY="-79" width="128" height="300"/>
+        <element name="Retailer" positionX="-315" positionY="-79" width="128" height="120"/>
     </elements>
 </model>

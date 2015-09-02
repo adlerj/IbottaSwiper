@@ -45,10 +45,7 @@
             NSString *retailerID = [retailerDict[@"id"] stringValue];
             
             [Retailer createOrUpdateRetailerWithID: retailerID
-                                            active:retailerDict[@"active"]
-                                              name:retailerDict[@"name"]
-                                           iconURL:retailerDict[@"icon_url"]
-                                          imageURL:retailerDict[@"exclusive_image_url"]];
+                                              name:retailerDict[@"name"]];
             [retailIDs removeObject:retailerID];
         }
         

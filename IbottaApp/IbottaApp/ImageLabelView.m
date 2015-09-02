@@ -52,7 +52,7 @@
                               image.size.height);
     self.imageView = [[UIImageView alloc] initWithFrame:frame];
     
-    self.imageView.contentMode = UIViewContentModeTop;
+    self.imageView.contentMode = UIViewContentModeCenter;
     self.imageView.clipsToBounds = YES;
     
     self.imageView.image = image;

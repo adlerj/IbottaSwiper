@@ -25,7 +25,8 @@
     [super viewDidLoad];
 
     self.infoLabel.text = [self prepareInfo];
-    self.imageView.contentMode = UIViewContentModeTop;
+    self.imageView.contentMode = UIViewContentModeCenter;
+    [self.offer.image downloadImage];
     
     self.offerURL = self.offer.offerURL;
     
@@ -45,6 +46,7 @@
 
 - (void)viewDidLayoutSubviews
 {
+
     UIImage *image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
     if (image) {
         self.imageView.image = image;
@@ -80,7 +82,7 @@
     NSString *distance = [self.offer displayDistance];
     NSString *earnings = [self.offer displayPotentialEarnings];
     
-    NSString *info = [NSString stringWithFormat:@"%@  - Save %@" ,distance ,earnings];
+    NSString *info = [NSString stringWithFormat:@"%@  - Earn %@" ,distance ,earnings];
     return info;
 }
 

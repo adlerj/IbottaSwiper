@@ -13,23 +13,11 @@
 
 @interface Retailer : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * active;
-@property (nonatomic, retain) NSNumber * anyBrand;
-@property (nonatomic, retain) NSString * anyBrandFullURL;
-@property (nonatomic, retain) NSString * anyBrandIconURL;
-@property (nonatomic, retain) NSNumber * barcode;
-@property (nonatomic, retain) NSString * cardSignupURL;
-@property (nonatomic, retain) NSString * exclusiveImageURL;
-@property (nonatomic, retain) NSNumber * featured;
-@property (nonatomic, retain) NSString * iconURL;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * retailerID;
-@property (nonatomic, retain) NSNumber * sortOrder;
-@property (nonatomic, retain) NSNumber * verificationType;
 @property (nonatomic, retain) NSNumber * unlikedOffers;
 @property (nonatomic, retain) NSSet *locations;
 @property (nonatomic, retain) NSSet *offers;
-@property (nonatomic, retain) RedemptionData *redemptionData;
 @end
 
 @interface Retailer (CoreDataGeneratedAccessors)

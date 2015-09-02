@@ -18,16 +18,15 @@
 		1F3A17DE1B8E47D90057707E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A17DD1B8E47D90057707E /* CoreLocation.framework */; };
 		1F3A17E41B8E4E1F0057707E /* JADLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E31B8E4E1F0057707E /* JADLocationManager.m */; };
 		1F3A17E71B8E566F0057707E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A17E61B8E566F0057707E /* Location.m */; };
-		1F3A39B71B955BFA0097C92F /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39B61B955BFA0097C92F /* OfferDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1F3A39BD1B9563C40097C92F /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39BB1B9563C40097C92F /* Offer.m */; settings = {ASSET_TAGS = (); }; };
-		1F4C6A8A1B96A183004CED40 /* denver.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6A891B96A183004CED40 /* denver.gpx */; settings = {ASSET_TAGS = (); }; };
+		1F3A39B71B955BFA0097C92F /* OfferDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39B61B955BFA0097C92F /* OfferDetailsViewController.m */; };
+		1F3A39BD1B9563C40097C92F /* Offer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A39BB1B9563C40097C92F /* Offer.m */; };
+		1F4C6A8A1B96A183004CED40 /* Denver, Colorado.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1F4C6A891B96A183004CED40 /* Denver, Colorado.gpx */; };
 		1F4ED28B1B8E128C00593A96 /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2881B8E128C00593A96 /* Offers.json */; };
 		1F4ED28C1B8E128C00593A96 /* Retailers.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED2891B8E128C00593A96 /* Retailers.json */; };
 		1F4ED28D1B8E128C00593A96 /* Store Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F4ED28A1B8E128C00593A96 /* Store Locations.json */; };
 		1F4ED2911B8E13EE00593A96 /* CheckSumHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2901B8E13EE00593A96 /* CheckSumHandler.m */; };
 		1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2961B8E14A100593A96 /* NSData+Addon.m */; };
 		1F4ED29B1B8E1AC300593A96 /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED29A1B8E1AC300593A96 /* JSONParser.m */; };
-		1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */; };
 		1F585D961B93D112000CF94D /* PreparationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F585D951B93D112000CF94D /* PreparationViewController.m */; };
 		1F6075521B92697300D78653 /* Offer+Addon.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6075511B92697300D78653 /* Offer+Addon.m */; };
 		1FA021E71B8E663100D4F27D /* ImageLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA021E61B8E663100D4F27D /* ImageLabelView.m */; };
@@ -81,7 +80,7 @@
 		1F3A39B61B955BFA0097C92F /* OfferDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferDetailsViewController.m; sourceTree = "<group>"; };
 		1F3A39BA1B9563C40097C92F /* Offer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Offer.h; sourceTree = "<group>"; };
 		1F3A39BB1B9563C40097C92F /* Offer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Offer.m; sourceTree = "<group>"; };
-		1F4C6A891B96A183004CED40 /* denver.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = denver.gpx; sourceTree = "<group>"; };
+		1F4C6A891B96A183004CED40 /* Denver, Colorado.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Denver, Colorado.gpx"; sourceTree = "<group>"; };
 		1F4ED2881B8E128C00593A96 /* Offers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Offers.json; path = ../Offers.json; sourceTree = "<group>"; };
 		1F4ED2891B8E128C00593A96 /* Retailers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Retailers.json; path = ../Retailers.json; sourceTree = "<group>"; };
 		1F4ED28A1B8E128C00593A96 /* Store Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "Store Locations.json"; path = "../Store Locations.json"; sourceTree = "<group>"; };
@@ -91,8 +90,6 @@
 		1F4ED2961B8E14A100593A96 /* NSData+Addon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Addon.m"; sourceTree = "<group>"; };
 		1F4ED2991B8E1AC300593A96 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		1F4ED29A1B8E1AC300593A96 /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
-		1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedemptionData.h; sourceTree = "<group>"; };
-		1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedemptionData.m; sourceTree = "<group>"; };
 		1F585D941B93D112000CF94D /* PreparationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreparationViewController.h; sourceTree = "<group>"; };
 		1F585D951B93D112000CF94D /* PreparationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreparationViewController.m; sourceTree = "<group>"; };
 		1F6075501B92697300D78653 /* Offer+Addon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Offer+Addon.h"; sourceTree = "<group>"; };
@@ -103,7 +100,7 @@
 		1FA021E91B8E668A00D4F27D /* ChooseOfferView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOfferView.m; sourceTree = "<group>"; };
 		1FA021EE1B8E6BF700D4F27D /* ChooseOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOfferViewController.h; sourceTree = "<group>"; };
 		1FA021EF1B8E6BF700D4F27D /* ChooseOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOfferViewController.m; sourceTree = "<group>"; };
-		1FD0A65C1B8FCF76002473EA /* IbottaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD0A65C1B8FCF76002473EA /* IbottaSwiper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbottaSwiper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD0A6601B8FCF76002473EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0A6611B8FCF76002473EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FD0A6631B8FCF76002473EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,7 +109,7 @@
 		1FD0A66D1B8FCF76002473EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FD0A66F1B8FCF76002473EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FD0A6721B8FCF76002473EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1FD0A6781B8FCF77002473EA /* IbottaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IbottaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD0A6781B8FCF77002473EA /* IbottaSwiperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IbottaSwiperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD0A67D1B8FCF77002473EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0A67E1B8FCF77002473EA /* IbottaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IbottaAppTests.m; sourceTree = "<group>"; };
 		812D7FFA335FFE33FE3567DF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,7 +139,7 @@
 		1F4ED28E1B8E12F200593A96 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				1F4C6A891B96A183004CED40 /* denver.gpx */,
+				1F4C6A891B96A183004CED40 /* Denver, Colorado.gpx */,
 				1F4ED2881B8E128C00593A96 /* Offers.json */,
 				1F4ED2891B8E128C00593A96 /* Retailers.json */,
 				1F4ED28A1B8E128C00593A96 /* Store Locations.json */,
@@ -188,8 +185,8 @@
 		1FD0A65D1B8FCF76002473EA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FD0A65C1B8FCF76002473EA /* IbottaApp.app */,
-				1FD0A6781B8FCF77002473EA /* IbottaAppTests.xctest */,
+				1FD0A65C1B8FCF76002473EA /* IbottaSwiper.app */,
+				1FD0A6781B8FCF77002473EA /* IbottaSwiperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,8 +244,6 @@
 				1F338E581B95054F00F82053 /* OfferImage.m */,
 				1F3A17E51B8E566F0057707E /* Location.h */,
 				1F3A17E61B8E566F0057707E /* Location.m */,
-				1F4ED2A21B8E1EE200593A96 /* RedemptionData.h */,
-				1F4ED2A31B8E1EE200593A96 /* RedemptionData.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -323,9 +318,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FD0A65B1B8FCF76002473EA /* IbottaApp */ = {
+		1FD0A65B1B8FCF76002473EA /* IbottaSwiper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FD0A6821B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaApp" */;
+			buildConfigurationList = 1FD0A6821B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaSwiper" */;
 			buildPhases = (
 				916214D9E0B031A2421BFDE1 /* Check Pods Manifest.lock */,
 				1FD0A6581B8FCF76002473EA /* Sources */,
@@ -337,14 +332,14 @@
 			);
 			dependencies = (
 			);
-			name = IbottaApp;
+			name = IbottaSwiper;
 			productName = IbottaApp;
-			productReference = 1FD0A65C1B8FCF76002473EA /* IbottaApp.app */;
+			productReference = 1FD0A65C1B8FCF76002473EA /* IbottaSwiper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1FD0A6771B8FCF77002473EA /* IbottaAppTests */ = {
+		1FD0A6771B8FCF77002473EA /* IbottaSwiperTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FD0A6851B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaAppTests" */;
+			buildConfigurationList = 1FD0A6851B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaSwiperTests" */;
 			buildPhases = (
 				1FD0A6741B8FCF77002473EA /* Sources */,
 				1FD0A6751B8FCF77002473EA /* Frameworks */,
@@ -355,9 +350,9 @@
 			dependencies = (
 				1FD0A67A1B8FCF77002473EA /* PBXTargetDependency */,
 			);
-			name = IbottaAppTests;
+			name = IbottaSwiperTests;
 			productName = IbottaAppTests;
-			productReference = 1FD0A6781B8FCF77002473EA /* IbottaAppTests.xctest */;
+			productReference = 1FD0A6781B8FCF77002473EA /* IbottaSwiperTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -379,7 +374,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1FD0A6571B8FCF76002473EA /* Build configuration list for PBXProject "IbottaApp" */;
+			buildConfigurationList = 1FD0A6571B8FCF76002473EA /* Build configuration list for PBXProject "IbottaSwiper" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -392,8 +387,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FD0A65B1B8FCF76002473EA /* IbottaApp */,
-				1FD0A6771B8FCF77002473EA /* IbottaAppTests */,
+				1FD0A65B1B8FCF76002473EA /* IbottaSwiper */,
+				1FD0A6771B8FCF77002473EA /* IbottaSwiperTests */,
 			);
 		};
 /* End PBXProject section */
@@ -409,7 +404,7 @@
 				1FD0A66E1B8FCF76002473EA /* Main.storyboard in Resources */,
 				1FD0A6731B8FCF76002473EA /* LaunchScreen.xib in Resources */,
 				1FD0A6701B8FCF76002473EA /* Images.xcassets in Resources */,
-				1F4C6A8A1B96A183004CED40 /* denver.gpx in Resources */,
+				1F4C6A8A1B96A183004CED40 /* Denver, Colorado.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +476,6 @@
 				1F4ED2971B8E14A100593A96 /* NSData+Addon.m in Sources */,
 				1FD0A6681B8FCF76002473EA /* IbottaApp.xcdatamodeld in Sources */,
 				1F338E6C1B9524E600F82053 /* LikedOffersTableViewController.m in Sources */,
-				1F4ED2A41B8E1EE200593A96 /* RedemptionData.m in Sources */,
 				1F4ED2911B8E13EE00593A96 /* CheckSumHandler.m in Sources */,
 				1FA021F01B8E6BF700D4F27D /* ChooseOfferViewController.m in Sources */,
 			);
@@ -500,7 +494,7 @@
 /* Begin PBXTargetDependency section */
 		1FD0A67A1B8FCF77002473EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1FD0A65B1B8FCF76002473EA /* IbottaApp */;
+			target = 1FD0A65B1B8FCF76002473EA /* IbottaSwiper */;
 			targetProxy = 1FD0A6791B8FCF77002473EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -614,7 +608,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = IbottaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IbottaSwiper;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -628,7 +622,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = IbottaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IbottaSwiper;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -647,7 +641,7 @@
 				);
 				INFOPLIST_FILE = IbottaAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IbottaSwiperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IbottaApp.app/IbottaApp";
 			};
 			name = Debug;
@@ -662,7 +656,7 @@
 				);
 				INFOPLIST_FILE = IbottaAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IbottaSwiperTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IbottaApp.app/IbottaApp";
 			};
 			name = Release;
@@ -670,7 +664,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1FD0A6571B8FCF76002473EA /* Build configuration list for PBXProject "IbottaApp" */ = {
+		1FD0A6571B8FCF76002473EA /* Build configuration list for PBXProject "IbottaSwiper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FD0A6801B8FCF77002473EA /* Debug */,
@@ -679,7 +673,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FD0A6821B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaApp" */ = {
+		1FD0A6821B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaSwiper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FD0A6831B8FCF77002473EA /* Debug */,
@@ -688,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FD0A6851B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaAppTests" */ = {
+		1FD0A6851B8FCF77002473EA /* Build configuration list for PBXNativeTarget "IbottaSwiperTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1FD0A6861B8FCF77002473EA /* Debug */,

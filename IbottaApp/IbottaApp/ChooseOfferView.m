@@ -32,8 +32,11 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     self = [super initWithFrame:frame options:options];
     if (self) {
         self.offer = offer;
+        CGRect frame = self.imageView.frame;
+        frame.size.height -= 60.f;
+        self.imageView.frame = frame;
         self.imageView.backgroundColor = [UIColor blackColor];
-        self.imageView.contentMode = UIViewContentModeTop;
+        self.imageView.contentMode = UIViewContentModeCenter;
         
         UIImage *image = [self.offer.image retrieveImageSizedToFrame:frame];
         if (image) {
@@ -98,12 +101,12 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 }
 
 - (void)constructDistanceImageLabelView {
-    CGFloat rightPadding = 100.f;
+    CGFloat leftPadding = 50.f;
     UIImage *image = [UIImage imageNamed:@"distance"];
     
     NSString *text = [self.offer displayDistance];
     
-    _distanceImageLabelView = [self buildImageLabelViewLeftOf:CGRectGetMinX(_savingsImageLabelView.frame) - rightPadding
+    _distanceImageLabelView = [self buildImageLabelViewRightOf:leftPadding
                                                        image:image
                                                         text:text];
     [_informationView addSubview:_distanceImageLabelView];
@@ -111,6 +114,18 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 
 - (ImageLabelView *)buildImageLabelViewLeftOf:(CGFloat)x image:(UIImage *)image text:(NSString *)text {
     CGRect frame = CGRectMake(x - ChooseOfferViewImageLabelWidth,
+                              0,
+                              ChooseOfferViewImageLabelWidth,
+                              CGRectGetHeight(_informationView.bounds));
+    ImageLabelView *view = [[ImageLabelView alloc] initWithFrame:frame
+                                                           image:image
+                                                            text:text];
+    view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+    return view;
+}
+
+- (ImageLabelView *)buildImageLabelViewRightOf:(CGFloat)x image:(UIImage *)image text:(NSString *)text {
+    CGRect frame = CGRectMake(x,
                               0,
                               ChooseOfferViewImageLabelWidth,
                               CGRectGetHeight(_informationView.bounds));

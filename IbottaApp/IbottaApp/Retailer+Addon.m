@@ -12,10 +12,7 @@
 @implementation Retailer (Addon)
 
 + (Retailer*)createOrUpdateRetailerWithID:(NSString*)ID
-                              active:(NSNumber*)active
                                 name:(NSString*)name
-                             iconURL:(NSString*)iconURL
-                            imageURL:(NSString*)imageURL
 {
     NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
     
@@ -25,10 +22,7 @@
     }
     
     retailer.retailerID = ID;
-    retailer.active = active;
     retailer.name = name;
-    retailer.iconURL = iconURL;
-    retailer.exclusiveImageURL = imageURL;
     
     return retailer;
 }

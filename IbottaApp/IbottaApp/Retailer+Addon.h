@@ -22,10 +22,7 @@
  *         a new one will be generated.
  */
 + (Retailer*)createOrUpdateRetailerWithID:(NSString*)ID
-                                   active:(NSNumber*)active
-                                     name:(NSString*)name
-                                  iconURL:(NSString*)iconURL
-                                 imageURL:(NSString*)imageURL;
+                                     name:(NSString*)name;
 
 /**
  * @param ID the retailerID we are looking up

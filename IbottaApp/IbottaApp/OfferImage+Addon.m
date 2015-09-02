@@ -102,13 +102,11 @@
 {
     UIImage *image = [self retrieveImage];
     if (image) {
-        float heightDif = image.size.height - (frame.size.height - 18.0f);
+        float heightDif = image.size.height - frame.size.height;
         float widthDif = image.size.width - frame.size.width;
         
-        if (heightDif < 0 && widthDif < 0) {
-            return image;
-        } else if (heightDif > widthDif) {
-            return [OfferImage image:image scaledToHeight:frame.size.height - 18.0f];
+        if (heightDif > widthDif) {
+            return [OfferImage image:image scaledToHeight:frame.size.height];
         } else {
             return [OfferImage image:image scaledToWidth:frame.size.width];
         }

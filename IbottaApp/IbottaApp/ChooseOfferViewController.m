@@ -23,6 +23,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 
 @property (nonatomic, strong) NSMutableArray *offerItems;
 @property (nonatomic, strong) NSOperationQueue *imgDownloadOperationQueue;
+@property (nonatomic, strong) UIAlertController *noOffersAlert;
 @end
 
 @implementation ChooseOfferViewController
@@ -96,16 +97,17 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
                 }
                 [context save:nil];
             }
-        } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Nearby Offers"
+        } else if (!self.noOffersAlert) {
+            self.noOffersAlert = [UIAlertController alertControllerWithTitle:@"No Nearby Offers"
                                                                            message:@"There are no offers near your location."
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
-            [alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            [self.noOffersAlert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                 [self.navigationController popToRootViewControllerAnimated:YES];
+                self.noOffersAlert = nil;
             }]];
             
-            [self presentViewController:alert animated:YES completion:nil];
+            [self presentViewController:self.noOffersAlert animated:YES completion:nil];
         }
     }];
 }
