@@ -23,7 +23,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 
 @property (nonatomic, strong) NSMutableArray *offerItems;
 @property (nonatomic, strong) NSOperationQueue *imgDownloadOperationQueue;
-@property (nonatomic, strong) UIAlertController *noOffersAlert;
+@property (nonatomic) BOOL noOffersAlertShown;
 @end
 
 @implementation ChooseOfferViewController
@@ -62,6 +62,8 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     [self constructNopeButton];
     [self constructLikedButton];
     
+    self.noOffersAlertShown = NO;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationsUpdated:) name:kDistancesUpdatedNotification object:nil];
 }
 
@@ -97,17 +99,18 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
                 }
                 [context save:nil];
             }
-        } else if (!self.noOffersAlert) {
-            self.noOffersAlert = [UIAlertController alertControllerWithTitle:@"No Nearby Offers"
+        } else if (!self.noOffersAlertShown) {
+            
+            UIAlertController *noOffersAlert = [UIAlertController alertControllerWithTitle:@"No Nearby Offers"
                                                                            message:@"There are no offers near your location."
                                                                     preferredStyle:UIAlertControllerStyleAlert];
             
-            [self.noOffersAlert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            [noOffersAlert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                 [self.navigationController popToRootViewControllerAnimated:YES];
-                self.noOffersAlert = nil;
+                self.noOffersAlertShown = YES;
             }]];
             
-            [self presentViewController:self.noOffersAlert animated:YES completion:nil];
+            [self presentViewController:noOffersAlert animated:YES completion:nil];
         }
     }];
 }
