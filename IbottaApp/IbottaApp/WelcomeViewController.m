@@ -21,7 +21,7 @@
                          @"This app will ask to use your location, "
                          @"then find offers at retailers that have "
                          @"locations within 20 miles of you!  Feel free "
-                         @"swipe right if you like and offer, and left "
+                         @"swipe right if you like an offer, and left "
                          @"if you don't care for it.  At any time you "
                          @"can view offers that you have liked by "
                          @"clicking the liked offers button! Have fun!";

@@ -42,7 +42,7 @@
         
         for (NSDictionary *retailerDict in rawRetailers) {
             
-            NSString *retailerID = [NSString stringWithFormat:@"%d",(int)retailerDict[@"id"]];
+            NSString *retailerID = [retailerDict[@"id"] stringValue];
             
             [Retailer createOrUpdateRetailerWithID: retailerID
                                             active:retailerDict[@"active"]
@@ -89,8 +89,8 @@
         
         for (NSDictionary *locationDict in rawLocations) {
             
-            NSString *locationID = [NSString stringWithFormat:@"%d",(int)locationDict[@"id"]];
-            NSString *retailerID = [NSString stringWithFormat:@"%d",(int)locationDict[@"retailer_id"]];
+            NSString *locationID = [locationDict[@"id"] stringValue];
+            NSString *retailerID = [locationDict[@"retailer_id"] stringValue];
                 
             Location *location = [Location createOrUpdateLocationWithID:locationID
                                                                latitude:locationDict[@"lat"]
@@ -140,7 +140,7 @@
         
         for (NSDictionary *offerDict in rawOffers) {
             
-            NSString *offerID = [NSString stringWithFormat:@"%d",(int)offerDict[@"id"]];
+            NSString *offerID = [offerDict[@"id"] stringValue];
             NSSet *retailerIDs = offerDict[@"retailers"];
 
             Offer *offer = [Offer createOrUpdateOfferWithID:offerID

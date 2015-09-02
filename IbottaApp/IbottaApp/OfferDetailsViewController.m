@@ -26,7 +26,7 @@
 
     self.infoLabel.text = [self prepareInfo];
     self.imageView.contentMode = UIViewContentModeTop;
-    self.imageView.image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
+    
     self.offerURL = self.offer.offerURL;
     
     if (![self.offer.image.isDownloaded boolValue]) {
@@ -41,6 +41,11 @@
     }
     
     self.openSiteButton.title = @"View Online";
+}
+
+- (void)viewDidLayoutSubviews
+{
+    self.imageView.image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
 }
 
 - (IBAction)openOfferInWeb:(id)sender {
