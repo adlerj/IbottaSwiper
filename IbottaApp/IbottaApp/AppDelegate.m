@@ -37,7 +37,7 @@
     filePath = [[NSBundle mainBundle] pathForResource:@"Offers" ofType:@"json"];
     [JSONParser parseOffersAtPathIfNew:filePath];
     
-    self.locationManager = [[JADLocationManager alloc] init];
+    self.locationManager = [[JADLocationManager alloc] initWithDistanceFilter:1];
     
     [self configureUIAppearance];
 
@@ -153,8 +153,12 @@
 
 - (void)configureUIAppearance
 {
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"Arial Rounded MT Bold" size:15]}
+    NSDictionary *attributes = @{NSFontAttributeName : [UIFont fontWithName:@"Arial Rounded MT Bold" size:15],
+                                 NSForegroundColorAttributeName : [UIColor colorWithRed:104 green:166 blue:53 alpha:1]};
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:attributes
                                                 forState:UIControlStateNormal];
+
 }
 
 @end

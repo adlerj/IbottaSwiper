@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m0N-B8-Rna">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m0N-B8-Rna">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome View Controller-->
+        <!--Welcome-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="WelcomeViewController" sceneMemberID="viewController">
@@ -18,12 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y35-B8-hAf">
-                                <rect key="frame" x="26" y="26" width="548" height="548"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Y35-B8-hAf" secondAttribute="height" multiplier="1:1" id="vsD-C8-p3f"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U8-ah-KYa">
                                 <rect key="frame" x="190" y="509" width="221" height="46"/>
                                 <constraints>
@@ -33,7 +28,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="21"/>
                                 <state key="normal" title="Find Offers Near Me">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -45,41 +40,49 @@
                                     <segue destination="kes-Z1-K8F" kind="show" id="wY9-JS-Gy8"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Welcome to the Ibotta Swiper!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXW-zL-WVQ">
+                                <rect key="frame" x="180" y="148" width="240" height="236"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="236" id="4kF-Y4-ie6"/>
+                                    <constraint firstAttribute="width" constant="240" id="vaS-EC-cDO"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.36470588240000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="1U8-ah-KYa" secondAttribute="bottom" constant="45" id="FsW-lm-mxz"/>
-                            <constraint firstAttribute="centerY" secondItem="Y35-B8-hAf" secondAttribute="centerY" id="LJs-je-uPK"/>
-                            <constraint firstAttribute="centerX" secondItem="Y35-B8-hAf" secondAttribute="centerX" id="Uhj-Fi-Use"/>
-                            <constraint firstItem="Y35-B8-hAf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="WWP-ol-4dI"/>
+                            <constraint firstItem="jXW-zL-WVQ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="YpJ-rk-khZ"/>
                             <constraint firstAttribute="centerX" secondItem="1U8-ah-KYa" secondAttribute="centerX" id="aod-lK-8sJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Y35-B8-hAf" secondAttribute="trailing" constant="10" id="lz1-cD-YMV"/>
+                            <constraint firstItem="1U8-ah-KYa" firstAttribute="top" secondItem="jXW-zL-WVQ" secondAttribute="bottom" constant="125" id="r3l-LV-EZl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="idx-VK-YEr">
+                    <navigationItem key="navigationItem" title="Welcome" id="idx-VK-YEr">
                         <barButtonItem key="rightBarButtonItem" title="Liked Offers" id="mHA-Hv-ReQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="zzK-oG-YAa" kind="show" id="RTt-qW-xZw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="Y35-B8-hAf" id="oTH-YD-IjH"/>
+                        <outlet property="textView" destination="jXW-zL-WVQ" id="1GB-Aa-fvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1095" y="202"/>
         </scene>
-        <!--Title-->
+        <!--Liked Offers Table View Controller-->
         <scene sceneID="iWo-RX-cAQ">
             <objects>
                 <tableViewController id="zzK-oG-YAa" customClass="LikedOffersTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="He1-Il-yOW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.36470588240000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OfferCell" textLabel="Gk0-HL-iba" style="IBUITableViewCellStyleDefault" id="Crm-cn-Tv6" customClass="OfferCell">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
@@ -92,12 +95,12 @@
                                             <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="16"/>
-                                            <color key="textColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40784313729999999" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="label" destination="Gk0-HL-iba" id="wIh-Q6-YfW"/>
                                     <segue destination="Fjc-QY-TqZ" kind="show" identifier="OfferDetailsSegue" id="m9A-44-nIP"/>
@@ -109,7 +112,7 @@
                             <outlet property="delegate" destination="zzK-oG-YAa" id="CBx-6B-FNH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="ESB-gc-HQJ"/>
+                    <navigationItem key="navigationItem" id="ESB-gc-HQJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oqm-i7-qce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,28 +137,31 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okw-5U-azg">
-                                <rect key="frame" x="240" y="505" width="120" height="30"/>
+                                <rect key="frame" x="225" y="505" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1VH-G0-7hP"/>
-                                    <constraint firstAttribute="width" constant="120" id="iHR-m4-c6s"/>
+                                    <constraint firstAttribute="width" constant="150" id="iHR-m4-c6s"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                <state key="normal" title="Open in Ibotta"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
+                                <state key="normal" title="Open in Ibotta">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="goToOffer:" destination="Fjc-QY-TqZ" eventType="touchUpInside" id="YnL-8K-AEF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-nA-ijO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-nA-ijO">
                                 <rect key="frame" x="21" y="89" width="559" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="LmR-1Z-MGD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
-                                <color key="textColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.36470588240000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a0s-nA-ijO" firstAttribute="centerX" secondItem="XFw-Cy-ndm" secondAttribute="centerX" id="8Oh-Iz-Wt0"/>
                             <constraint firstItem="a0s-nA-ijO" firstAttribute="top" secondItem="AMu-NN-pUC" secondAttribute="bottom" constant="25" id="Kzi-zA-HNY"/>
@@ -174,7 +180,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="shv-Qm-aoy">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="M19-gd-pZK">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="M19-gd-pZK">
                             <connections>
                                 <action selector="openOfferInWeb:" destination="Fjc-QY-TqZ" id="SRh-GN-UyR"/>
                             </connections>
@@ -200,7 +206,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UM9-8J-HCK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.40784313729999999" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -222,11 +231,12 @@
                     <view key="view" contentMode="scaleToFill" id="CRs-wV-1XY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.36470588240000001" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="K6q-fE-481">
                         <barButtonItem key="rightBarButtonItem" title="Liked Offers" id="qjG-vo-4ao">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="zzK-oG-YAa" kind="show" id="A4t-En-RxS"/>
                             </connections>

@@ -32,7 +32,9 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     self = [super initWithFrame:frame options:options];
     if (self) {
         self.offer = offer;
-        self.imageView.image = [self.offer.image retrieveImage];
+        self.imageView.backgroundColor = [UIColor blackColor];
+        self.imageView.contentMode = UIViewContentModeTop;
+        self.imageView.image = [self.offer.image retrieveImageSizedToFrame:frame];
         
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight |
         UIViewAutoresizingFlexibleWidth |
@@ -73,26 +75,12 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
     UIViewAutoresizingFlexibleTopMargin;
     [self addSubview:_informationView];
     
-    [self constructNameLabel];
     [self constructSavingsImageLabelView];
     [self constructDistanceImageLabelView];
 }
 
-- (void)constructNameLabel {
-    CGFloat leftPadding = 12.f;
-    CGFloat topPadding = 17.f;
-    CGRect frame = CGRectMake(leftPadding,
-                              topPadding,
-                              floorf(CGRectGetWidth(_informationView.frame)/2),
-                              CGRectGetHeight(_informationView.frame) - topPadding);
-    _nameLabel = [[UILabel alloc] initWithFrame:frame];
-    _nameLabel.text = [NSString stringWithFormat:@"%@", self.offer.name];
-    _nameLabel.font = [UIFont systemFontOfSize:12.0];
-    [_informationView addSubview:_nameLabel];
-}
-
 - (void)constructSavingsImageLabelView {
-    CGFloat rightPadding = 30.f;
+    CGFloat rightPadding = 50.f;
     UIImage *image = [UIImage imageNamed:@"savings"];
     
     NSString *text = [self.offer displayPotentialEarnings];
@@ -104,7 +92,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
 }
 
 - (void)constructDistanceImageLabelView {
-    CGFloat rightPadding = 30.f;
+    CGFloat rightPadding = 100.f;
     UIImage *image = [UIImage imageNamed:@"distance"];
     
     NSString *text = [self.offer displayDistance];
@@ -134,7 +122,7 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
                       context:(void *)context
 {
     if (object == self.offer.image && [keyPath isEqualToString:@"isDownloaded"]) {
-        self.imageView.image = [self.offer.image retrieveImage];
+        self.imageView.image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
         [self.offer.image removeObserver:self forKeyPath:@"isDownloaded"];
         self.usingKVO = NO;
     }

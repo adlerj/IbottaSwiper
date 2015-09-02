@@ -90,6 +90,54 @@
     return YES;
 }
 
+- (UIImage*)retrieveImageSizedToFrame:(CGRect)frame
+{
+    UIImage *image = [self retrieveImage];
+    
+    float heightDif = image.size.height - (frame.size.height - 18.0f);
+    float widthDif = image.size.width - frame.size.width;
+    
+    if (heightDif < 0 && widthDif < 0) {
+        return image;
+    } else if (heightDif > widthDif) {
+        return [OfferImage image:image scaledToHeight:frame.size.height - 18.0f];
+    } else {
+        return [OfferImage image:image scaledToWidth:frame.size.width];
+    }
+    
+}
+
++ (UIImage*)image:(UIImage*)image scaledToWidth:(float)width
+{
+    
+    float oldWidth = image.size.width;
+    float scaleFactor = width / oldWidth;
+    
+    float newHeight = image.size.height * scaleFactor;
+    float newWidth = oldWidth * scaleFactor;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [image drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
++ (UIImage*)image:(UIImage*)image scaledToHeight:(float)height
+{
+    float oldHeight = image.size.height;
+    float scaleFactor = height / oldHeight;
+
+    float newWidth = image.size.width * scaleFactor;
+    float newHeight = oldHeight * scaleFactor;
+
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [image drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 - (UIImage*)retrieveImage
 {
     UIImage *image = nil;

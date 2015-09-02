@@ -43,6 +43,9 @@
  */
 + (void)deleteRetailersWithIDs:(NSArray*)IDs;
 
+//@return the closest location of this retailer
+- (double)closestLocationDistance;
+
 ///Adds one to the unlikedOffers count
 - (void)incrementUnlikedOffers;
 

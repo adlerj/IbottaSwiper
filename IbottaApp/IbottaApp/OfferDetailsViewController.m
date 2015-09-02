@@ -25,7 +25,8 @@
     [super viewDidLoad];
 
     self.infoLabel.text = [self prepareInfo];
-    self.imageView.image = [self.offer.image retrieveImage];
+    self.imageView.contentMode = UIViewContentModeTop;
+    self.imageView.image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
     self.offerURL = self.offer.offerURL;
     
     if (![self.offer.image.isDownloaded boolValue]) {
@@ -39,7 +40,7 @@
         [self.viewOfferButton setTitle:@"Get Ibotta App" forState:UIControlStateNormal];
     }
     
-    [self.openSiteButton setImage:[[UIImage imageNamed:@"safari-icon"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    self.openSiteButton.title = @"View Online";
 }
 
 - (IBAction)openOfferInWeb:(id)sender {
@@ -69,7 +70,7 @@
     NSString *distance = [self.offer displayDistance];
     NSString *earnings = [self.offer displayPotentialEarnings];
     
-    NSString *info = [NSString stringWithFormat:@"%@  - %@" ,distance ,earnings];
+    NSString *info = [NSString stringWithFormat:@"%@  - Save %@" ,distance ,earnings];
     return info;
 }
 
@@ -87,7 +88,7 @@
                       context:(void *)context
 {
     if (object == self.offer.image && [keyPath isEqualToString:@"isDownloaded"]) {
-        self.imageView.image = [self.offer.image retrieveImage];
+        self.imageView.image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
         [self.offer.image removeObserver:self forKeyPath:@"isDownloaded"];
         self.usingKVO = NO;
     }

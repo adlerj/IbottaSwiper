@@ -8,6 +8,7 @@
 
 #import "Offer+Addon.h"
 #import "OfferImage+Addon.h"
+#import "Retailer+Addon.h"
 
 @implementation Offer (Addon)
 
@@ -26,9 +27,18 @@
     
     offer.offerID = ID;
     offer.name = name;
-    offer.earningsPotential = earningPotential;
     offer.image = [OfferImage offerImageWithURL:imageURL];
     offer.offerURL = shareURL;
+    
+    int oldEarnings = [offer.earningsPotential intValue];
+    int newEarnings = [earningPotential intValue];
+
+    if (oldEarnings && newEarnings > oldEarnings && offer.likedStatus == kLikedStatus_Disliked) {
+        //If this offer is being updated and the earnings potential has
+        //increased, lets show the offer again if it was disliked
+        [offer setLikedStatus:kLikedStatus_None];
+    }
+    offer.earningsPotential = earningPotential;
     
     return offer;
 }
@@ -91,11 +101,38 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     formatter.maximumFractionDigits = 2;
     
-    NSString *distance = [formatter stringFromNumber:self.distance];
+    NSNumber *closestDistance = [NSNumber numberWithDouble:[self shortestDistanceToOffer]];
+    NSString *distance = [formatter stringFromNumber:closestDistance];
     
     NSString *text = [NSString stringWithFormat:@"%@ Mi.", distance];
     
     return text;
+}
+
+- (double)shortestDistanceToOffer
+{
+    __block double closest = -1;
+    
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    [context performBlockAndWait:^{
+        
+        NSAssert([[self.retailers anyObject] respondsToSelector:@selector(closestLocationDistance)],
+                 @"Retailers have to respond to closestLocationDistance");
+        
+        NSMutableArray *distances = [[[self.retailers valueForKey:@"closestLocationDistance"] allObjects] mutableCopy];
+        distances = [[distances sortedArrayUsingComparator:^NSComparisonResult(NSNumber *d1, NSNumber *d2) {
+            if ([d1 doubleValue] < [d2 doubleValue]) {
+                return NSOrderedAscending;
+            } else if ([d1 doubleValue] > [d2 doubleValue]) {
+                return NSOrderedDescending;
+            }
+            return NSOrderedSame;
+        }] mutableCopy];
+        [distances removeObject:[NSNumber numberWithDouble:0]];
+        closest = [[distances firstObject] doubleValue];
+    }];
+    
+    return closest;
 }
 
 - (NSString*)displayPotentialEarnings

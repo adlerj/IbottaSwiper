@@ -7,7 +7,7 @@
 //
 
 #import "JSONParser.h"
-#import "JADCheckSumHandler.h"
+#import "CheckSumHandler.h"
 #import "Retailer+Addon.h"
 #import "Location+Addon.h"
 #import "Offer+Addon.h"
@@ -27,7 +27,7 @@
         return NO;
     }
     
-    if ([JADCheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Retailers]) {
+    if ([CheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Retailers]) {
         return YES;
     }
     
@@ -58,7 +58,7 @@
         [context save:nil];
     }];
     
-    [JADCheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Retailers];
+    [CheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Retailers];
     return YES;
 }
 
@@ -75,7 +75,7 @@
 
     NSData *fileData = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
     
-    if ([JADCheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Locations]) {
+    if ([CheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Locations]) {
         return YES;
     }
 
@@ -109,7 +109,7 @@
         [context save:nil];
     }];
     
-    [JADCheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Locations];
+    [CheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Locations];
     return YES;
 }
 
@@ -126,7 +126,7 @@
     
     NSData *fileData = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
     
-    if ([JADCheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Offers]) {
+    if ([CheckSumHandler checkChecksumForData:fileData ofType:JSONFile_Offers]) {
         return YES;
     }
     
@@ -170,7 +170,7 @@
         [context save:nil];
     }];
     
-    [JADCheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Offers];
+    [CheckSumHandler saveChecksumForData:fileData ofType:JSONFile_Offers];
     return YES;
 }
 

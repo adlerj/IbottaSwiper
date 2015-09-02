@@ -11,5 +11,9 @@
 extern NSString * const kDistancesUpdatedNotification;
 
 @interface JADLocationManager : NSObject
-
+/**
+ * @param miles distance traveled before recalculation
+ * initializes a CLLocation manager with a distanceFilter set to miles
+ */
+- (instancetype)initWithDistanceFilter:(int)miles;
 @end

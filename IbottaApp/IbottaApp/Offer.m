@@ -12,7 +12,6 @@
 
 @implementation Offer
 
-@dynamic distance;
 @dynamic earningsPotential;
 @dynamic liked;
 @dynamic name;

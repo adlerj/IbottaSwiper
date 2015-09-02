@@ -13,7 +13,6 @@
 
 @interface Offer : NSManagedObject
 
-@property (nonatomic, retain) NSNumber *distance;
 @property (nonatomic, retain) NSNumber *earningsPotential;
 @property (nonatomic, retain) NSNumber *liked;
 @property (nonatomic, retain) NSString *name;

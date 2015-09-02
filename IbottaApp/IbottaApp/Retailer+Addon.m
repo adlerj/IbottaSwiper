@@ -7,6 +7,7 @@
 //
 
 #import "Retailer+Addon.h"
+#import "Location.h"
 
 @implementation Retailer (Addon)
 
@@ -68,6 +69,29 @@
             [context deleteObject:retailer];
         }
     }
+}
+
+- (double)closestLocationDistance
+{
+    __block double closest = -1;
+    
+    NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
+    [context performBlockAndWait:^{
+        NSMutableArray *distances = [[[self.locations valueForKey:@"distance"] allObjects] mutableCopy];
+        distances = [[distances sortedArrayUsingComparator:^NSComparisonResult(NSNumber *d1, NSNumber *d2) {
+            if ([d1 doubleValue] < [d2 doubleValue]) {
+                return NSOrderedAscending;
+            } else if ([d1 doubleValue] > [d2 doubleValue]) {
+                return NSOrderedDescending;
+            }
+            return NSOrderedSame;
+        }] mutableCopy];
+        
+        [distances removeObject:[NSNumber numberWithDouble:0]];
+        closest = [[distances firstObject] doubleValue];
+    }];
+    
+    return closest;
 }
 
 - (void)incrementUnlikedOffers

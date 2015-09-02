@@ -8,7 +8,6 @@
         <relationship name="retailer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Retailer" inverseName="locations" inverseEntity="Retailer" syncable="YES"/>
     </entity>
     <entity name="Offer" representedClassName="Offer" syncable="YES">
-        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="earningsPotential" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="liked" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,7 +50,7 @@
     </entity>
     <elements>
         <element name="Location" positionX="-81" positionY="45" width="128" height="120"/>
-        <element name="Offer" positionX="-198" positionY="117" width="128" height="165"/>
+        <element name="Offer" positionX="-198" positionY="117" width="128" height="150"/>
         <element name="OfferImage" positionX="-198" positionY="72" width="128" height="103"/>
         <element name="RedemptionData" positionX="-119" positionY="225" width="128" height="118"/>
         <element name="Retailer" positionX="-315" positionY="-79" width="128" height="300"/>

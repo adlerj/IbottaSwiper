@@ -79,7 +79,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
     NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
     
     [context performBlockAndWait:^{
-        NSArray *closestLocations = [Location fetchClosestLocationsWithUnlikedOffers:10 withinRange:20];
+        NSArray *closestLocations = [Location fetchClosestLocationsWithUnlikedOffers:5 withinRange:20];
         
         if ([closestLocations count]) {
             
@@ -90,8 +90,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
                     if (offer.likedStatus != kLikedStatus_None) {
                         continue;
                     }
-                    
-                    offer.distance = location.distance;
+                
                     [self.imgDownloadOperationQueue addOperation:[offer createDownloadOperation]];
                     [self.offerItems addObject:offer];
                 }
@@ -114,10 +113,6 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 - (void)locationsUpdated:(NSNotification*)note
 {
     [self fetchMoreOffers];
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
 }
 
 #pragma mark - MDCSwipeToChooseDelegate Protocol Methods
@@ -214,7 +209,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
 
 - (CGRect)frontCardViewFrame {
     CGFloat horizontalPadding = 20.f;
-    CGFloat topPadding = 60.f;
+    CGFloat topPadding = 80.f;
     CGFloat bottomPadding = 200.f;
     return CGRectMake(horizontalPadding,
                       topPadding,
@@ -239,10 +234,7 @@ static const CGFloat ChooseOfferButtonVerticalPadding = 20.f;
                               image.size.width,
                               image.size.height);
     [button setImage:image forState:UIControlStateNormal];
-    [button setTintColor:[UIColor colorWithRed:247.f/255.f
-                                         green:91.f/255.f
-                                          blue:37.f/255.f
-                                         alpha:1.f]];
+    [button setTintColor:[UIColor blackColor]];
     [button addTarget:self
                action:@selector(nopeFrontCardView)
      forControlEvents:UIControlEventTouchUpInside];

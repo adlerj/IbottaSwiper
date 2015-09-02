@@ -37,6 +37,12 @@
  */
 - (UIImage*)retrieveImage;
 
+/**
+ * @param frame the frame the image needs to fit in
+ * @return the image retrieved by retrieveImage with the same aspect ratio but
+ *         new size to fit in the frame;
+ */
+- (UIImage*)retrieveImageSizedToFrame:(CGRect)frame;
 
 /**
  * Deletes the local image and changes the downloaded state to NO

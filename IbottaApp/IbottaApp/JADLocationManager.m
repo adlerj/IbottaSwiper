@@ -15,17 +15,19 @@ double const metersInAMile = 1609.34;
 
 @interface JADLocationManager () <CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic) int miles;
 @end
 
 @implementation JADLocationManager
 
-- (instancetype)init
+- (instancetype)initWithDistanceFilter:(int)miles
 {
     self = [super init];
     
     if (self) {
         if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [self.locationManager requestWhenInUseAuthorization];
+            self.miles = miles;
         }
         
         [self.locationManager startUpdatingLocation];
@@ -40,7 +42,7 @@ double const metersInAMile = 1609.34;
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        _locationManager.distanceFilter = 1 * metersInAMile;
+        _locationManager.distanceFilter = self.miles * metersInAMile;
     }
     
     return _locationManager;
@@ -48,7 +50,13 @@ double const metersInAMile = 1609.34;
 
 - (void)recalculateDistances:(CLLocation*)currentLocation
 {
-    }
+    
+//Maybe one day I won't have to fake being in Denver ;)
+    
+//    if (currentLocation) {
+//        currentLocation = [[CLLocation alloc] initWithLatitude:39.7392
+//                                                     longitude:-104.9903];
+//    }
     
     NSManagedObjectContext *context = [AppDelegate sharedDelegate].managedObjectContext;
     
