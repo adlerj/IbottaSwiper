@@ -45,7 +45,12 @@
 
 - (void)viewDidLayoutSubviews
 {
-    self.imageView.image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
+    UIImage *image = [self.offer.image retrieveImageSizedToFrame:self.imageView.frame];
+    if (image) {
+        self.imageView.image = image;
+    } else {
+        self.imageView.image = [UIImage animatedImageNamed:@"loading-" duration:2.0f];
+    }
 }
 
 - (IBAction)openOfferInWeb:(id)sender {

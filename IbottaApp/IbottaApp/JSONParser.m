@@ -149,7 +149,6 @@
                                                    shareURL:offerDict[@"share_url"]
                                           earningsPotential:offerDict[@"earnings_potential"]];
             
-            [offerIDs removeObject:offerID];
             
             for (NSNumber *retailerID in retailerIDs) {
                 Retailer *retailer = [Retailer fetchRetailerForID:[retailerID stringValue]];
@@ -159,13 +158,13 @@
                 }
             }
             
-            if (![offer.retailers count]) {
-                [context deleteObject:offer];
+            if ([offer.retailers count]) {
+                [offerIDs removeObject:offerID];
             }
         }
         
-        //Delete all old locations from CoreData
-        [Location deleteLocationsWithIDs:offerIDs];
+        //Delete all old offers from CoreData
+        [Offer deleteOffersWithIDs:offerIDs];
         
         [context save:nil];
     }];

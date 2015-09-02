@@ -25,6 +25,7 @@
                          @"if you don't care for it.  At any time you "
                          @"can view offers that you have liked by "
                          @"clicking the liked offers button! Have fun!";
+    
     self.textView.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:15];
     self.textView.textColor = [UIColor whiteColor];
 }

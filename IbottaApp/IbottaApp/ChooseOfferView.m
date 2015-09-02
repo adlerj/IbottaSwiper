@@ -34,7 +34,13 @@ static const CGFloat ChooseOfferViewImageLabelWidth = 42.f;
         self.offer = offer;
         self.imageView.backgroundColor = [UIColor blackColor];
         self.imageView.contentMode = UIViewContentModeTop;
-        self.imageView.image = [self.offer.image retrieveImageSizedToFrame:frame];
+        
+        UIImage *image = [self.offer.image retrieveImageSizedToFrame:frame];
+        if (image) {
+            self.imageView.image = image;
+        } else {
+            self.imageView.image = [UIImage animatedImageNamed:@"loading-" duration:2.0f];
+        }
         
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight |
         UIViewAutoresizingFlexibleWidth |

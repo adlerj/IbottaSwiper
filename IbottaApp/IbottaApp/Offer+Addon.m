@@ -27,6 +27,19 @@
     
     offer.offerID = ID;
     offer.name = name;
+    
+    if (![offer.image.imageURL isEqualToString:imageURL]) {
+        NSError *error = nil;
+        
+        [offer.image deleteImageWithError:&error];
+        
+        if (error) {
+            NSLog(@"Error deleting image: %@", error);
+        }
+        
+        offer.image.imageURL = imageURL;
+    }
+    
     offer.image = [OfferImage offerImageWithURL:imageURL];
     offer.offerURL = shareURL;
     
@@ -85,6 +98,16 @@
         Offer *offer = [Offer fetchOfferForID:ID];
         if (offer) {
             [offer removeRetailers:offer.retailers];
+            
+            NSError *error = nil;
+            
+            [offer.image deleteImageWithError:&error];
+            
+            if (error) {
+                NSLog(@"Error deleting image: %@", error);
+            }
+            
+            [context deleteObject:offer.image];
             [context deleteObject:offer];
         }
     }

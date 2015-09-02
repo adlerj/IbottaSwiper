@@ -84,6 +84,14 @@
                 }
                 return NO;
             }
+        } else {
+            if (error) {
+                
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Failed to download file at URL: %@", self.imageURL]};
+                
+                *error = [NSError errorWithDomain:@"com.jadler.nodownload" code:-1 userInfo:userInfo];
+            }
+            return NO;
         }
     }
     
@@ -93,18 +101,20 @@
 - (UIImage*)retrieveImageSizedToFrame:(CGRect)frame
 {
     UIImage *image = [self retrieveImage];
-    
-    float heightDif = image.size.height - (frame.size.height - 18.0f);
-    float widthDif = image.size.width - frame.size.width;
-    
-    if (heightDif < 0 && widthDif < 0) {
-        return image;
-    } else if (heightDif > widthDif) {
-        return [OfferImage image:image scaledToHeight:frame.size.height - 18.0f];
-    } else {
-        return [OfferImage image:image scaledToWidth:frame.size.width];
+    if (image) {
+        float heightDif = image.size.height - (frame.size.height - 18.0f);
+        float widthDif = image.size.width - frame.size.width;
+        
+        if (heightDif < 0 && widthDif < 0) {
+            return image;
+        } else if (heightDif > widthDif) {
+            return [OfferImage image:image scaledToHeight:frame.size.height - 18.0f];
+        } else {
+            return [OfferImage image:image scaledToWidth:frame.size.width];
+        }
     }
     
+    return image;
 }
 
 + (UIImage*)image:(UIImage*)image scaledToWidth:(float)width
@@ -151,8 +161,6 @@
         } else {
             image = [UIImage imageWithData:imageData];
         }
-    } else {
-        image = [UIImage animatedImageNamed:@"loader-" duration:0.03f];
     }
     return image;
 }
